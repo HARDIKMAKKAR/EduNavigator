@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +12,6 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
-import { HachathonsComponent } from './hachathons/hachathons.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +22,14 @@ import { HachathonsComponent } from './hachathons/hachathons.component';
     UpdatesComponent,
     SignupComponent,
     LoginComponent,
-    PagenotfoundComponent,
-    HachathonsComponent
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

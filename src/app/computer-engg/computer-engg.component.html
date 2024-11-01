@@ -1,0 +1,319 @@
+<div class="semWise">
+    
+    <div class="sem1">
+        <div class="AdvOption" (click)="showNested('sem1')">
+            <h5 >First Semester </h5>
+            <div class="caret-button" id="toggleButton">
+              <span>{{ sem1 ? '▲' : '▼' }}</span>
+
+          </div>
+    </div>
+    <div class="sem1Detail" *ngIf="sem1">
+        <table>
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th style="width: 40%;">Subject</th>
+                <th>Resources</th>
+                <th>PYQ</th>
+                <th>Video Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of sem1subject;let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item.subject }}</td>
+                <td>{{ item.resource }}</td>
+                <td>{{ item.pyq }}</td>
+                <td>{{ item.yt }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+    <div class="sem2">
+        <div class="AdvOption" (click)="showNested('sem2')">
+            <h5 >Second Semester </h5>
+            <div class="caret-button" id="toggleButton">
+              <span>{{ sem2 ? '▲' : '▼' }}</span>
+
+          </div>
+    </div>
+    <div class="sem2Detail" *ngIf="sem2">
+        <table>
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th style="width: 40%;">Subject</th>
+                <th>Resources</th>
+                <th>PYQ</th>
+                <th>Video Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of sem2subject;let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item.subject }}</td>
+                <td>{{ item.resource }}</td>
+                <td>{{ item.pyq }}</td>
+                <td>{{ item.yt }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+    <div class="sem3">
+        <div class="AdvOption" (click)="showNested('sem3')">
+            <h5 >Third Semester </h5>
+            <div class="caret-button" id="toggleButton">
+              <span>{{ sem3 ? '▲' : '▼' }}</span>
+
+          </div>
+    </div>
+    <div class="sem3Detail" *ngIf="sem3">
+        <table>
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th style="width: 40%;">Subject</th>
+                <th>Resources</th>
+                <th>PYQ</th>
+                <th>Video Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of sem3subject;let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item.subject }}</td>
+                <td>{{ item.resource }}</td>
+                <td>{{ item.pyq }}</td>
+                <td>{{ item.yt }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+    <div class="sem4">
+        <div class="AdvOption" (click)="showNested('sem4')">
+            <h5 >Fourth Semester </h5>
+            <div class="caret-button" id="toggleButton">
+              <span>{{ sem4 ? '▲' : '▼' }}</span>
+
+          </div>
+    </div>
+    <div class="sem4Detail" *ngIf="sem4">
+        <table>
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th style="width: 40%;">Subject</th>
+                <th>Resources</th>
+                <th>PYQ</th>
+                <th>Video Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of sem4subject;let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item.subject }}</td>
+                <td>{{ item.resource }}</td>
+                <td>{{ item.pyq }}</td>
+                <td>{{ item.yt }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    </div>
+    <div class="sem5">
+        <div class="AdvOption" (click)="showNested('sem5')">
+            <h5 >Fifth Semester </h5>
+            <div class="caret-button" id="toggleButton">
+              <span>{{ sem5 ? '▲' : '▼' }}</span>
+
+          </div>
+    </div>
+    <div class="sem5Detail" *ngIf="sem5">
+        <table>
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th style="width: 40%;">Subject</th>
+                <th>Resources</th>
+                <th>PYQ</th>
+                <th>Video Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of sem5subject;let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item.subject }}</td>
+                <td>{{ item.resource }}</td>
+                <td>{{ item.pyq }}</td>
+                <td>{{ item.yt }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+    <div class="sem6">
+        <div class="AdvOption" (click)="showNested('sem6')">
+            <h5 >Sixth Semester </h5>
+            <div class="caret-button" id="toggleButton">
+              <span>{{ sem5 ? '▲' : '▼' }}</span>
+
+          </div>
+    </div>
+    <div class="sem6Detail" *ngIf="sem6">
+        <table>
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th style="width: 40%;">Subject</th>
+                <th>Resources</th>
+                <th>PYQ</th>
+                <th>Video Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of sem5subject;let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item.subject }}</td>
+                <td>{{ item.resource }}</td>
+                <td>{{ item.pyq }}</td>
+                <td>{{ item.yt }}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+
+</div>
+</div>
+<div class="sem7">
+    <div class="AdvOption" (click)="showNested('sem7')">
+        <h5 >Seventh Semester </h5>
+        <div class="caret-button" id="toggleButton">
+          <span>{{ sem7 ? '▲' : '▼' }}</span>
+
+      </div>
+</div>
+<div class="sem7Detail" *ngIf="sem7">
+    <table>
+        <thead>
+          <tr>
+            <th>S.No.</th>
+            <th style="width: 40%;">Subject</th>
+            <th>Resources</th>
+            <th>PYQ</th>
+            <th>Video Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of sem7subject;let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ item.subject }}</td>
+            <td>{{ item.resource }}</td>
+            <td>{{ item.pyq }}</td>
+            <td>{{ item.yt }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="Elective">
+        <div class="AdvOption" (click)="[showElective('elective')]">
+            <h5 >Electives </h5>
+            <div class="caret-button" id="toggleButton">
+              <span>{{ elective ? '▲' : '▼' }}</span>
+
+          </div>
+    </div>
+    <div class="elective" *ngIf="elective">
+    <h5>Theory and Algorithms Code</h5>
+    <table>
+        <thead>
+          <tr>
+            <th>S.No.</th>
+            <th style="width: 40%;">Subject</th>
+            <th>Resources</th>
+            <th>PYQ</th>
+            <th>Video Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of algoElectiveSubs;let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ item.subject }}</td>
+            <td>{{ item.resource }}</td>
+            <td>{{ item.pyq }}</td>
+            <td>{{ item.yt }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Systems Code</h5>
+      <table>
+        <thead>
+          <tr>
+            <th>S.No.</th>
+            <th style="width: 40%;">Subject</th>
+            <th>Resources</th>
+            <th>PYQ</th>
+            <th>Video Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of systemsElectiveSubs;let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ item.subject }}</td>
+            <td>{{ item.resource }}</td>
+            <td>{{ item.pyq }}</td>
+            <td>{{ item.yt }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Data Science and Machine Intelligence</h5>
+      <table>
+        <thead>
+          <tr>
+            <th>S.No.</th>
+            <th style="width: 40%;">Subject</th>
+            <th>Resources</th>
+            <th>PYQ</th>
+            <th>Video Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of machineElectiveSubs;let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ item.subject }}</td>
+            <td>{{ item.resource }}</td>
+            <td>{{ item.pyq }}</td>
+            <td>{{ item.yt }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Applications Code</h5>
+      <table>
+        <thead>
+          <tr>
+            <th>S.No.</th>
+            <th style="width: 40%;">Subject</th>
+            <th>Resources</th>
+            <th>PYQ</th>
+            <th>Video Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of appcodeElectiveSubs;let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ item.subject }}</td>
+            <td>{{ item.resource }}</td>
+            <td>{{ item.pyq }}</td>
+            <td>{{ item.yt }}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+</div>
+</div>
+
+</div>
+</div>
+

@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HachathonsComponent } from './hachathons/hachathons.component';
 const routes: Routes = [
-  {path : '', redirectTo : 'home' , pathMatch : 'full'},
+  {path : '', redirectTo : 'home'},
   {path : 'home' , component :  HomeComponent},
   {path : 'chatbot' , component :  ChatbotComponent},
   {path : 'updates' , component :  UpdatesComponent},
