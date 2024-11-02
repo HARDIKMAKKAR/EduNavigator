@@ -88,33 +88,32 @@ export class ComputerEnggComponent {
     {subject:'Web and Internet Technology',resource:'link1',pyq:'link2',yt:'link3'},
     {subject:'Cryptography and Network Security',resource:'link1',pyq:'link2',yt:'link3'}
   ]
-  sem1=0;
-  sem2=0;
-  sem3=0;
-  sem4=0;
-  sem5=0;
-  sem6=0;
-  sem7=0;
-  sem8=0;
-  elective=0;
-  showNested(sem:string){
-    this.sem1=0;
-    this.sem2=0;
-    this.sem3=0;
-    this.sem4=0;
-    this.sem5=0;
-    this.sem6=0;
-    this.sem7=0;
-    this.sem8=0;
-    
-
-    this[sem]=1;
-    
-   
+  sem1 = 1;
+  sem2 = 0;
+  sem3 = 0;
+  sem4 = 0;
+  sem5 = 0;
+  sem6 = 0;
+  sem7 = 0;
+  elective = 0;
+  showNested(sem : string){
+      this.sem1 = 0;
+      this.sem2 = 0;
+      this.sem3 = 0;
+      this.sem4 = 0;
+      this.sem5 = 0;
+      this.sem6 = 0;
+      this.sem7 = 0;
+      this[sem] = 1;
   }
   showElective(elec:string){
-
-    this[elec]=!this[elec];
+    this.sem1 = 0;
+    this.sem2 = 0;
+    this.sem3 = 0;
+    this.sem4 = 0;
+    this.sem5 = 0;
+    this.sem6 = 0;
+    this.sem7 = 0;
+    this.elective = 1;
   }
-
 }

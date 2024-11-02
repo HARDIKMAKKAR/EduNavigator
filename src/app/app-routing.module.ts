@@ -7,13 +7,15 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HachathonsComponent } from './hachathons/hachathons.component';
+import { JobsComponent } from './jobs/jobs.component';
 const routes: Routes = [
-  {path : '', redirectTo : 'home'},
+  {path : '', redirectTo : 'home' , pathMatch : 'full'},
   {path : 'home' , component :  HomeComponent},
   {path : 'chatbot' , component :  ChatbotComponent},
   {path : 'updates' , component :  UpdatesComponent},
   {path : 'signup' , component :  SignupComponent},
   {path : 'login' , component :  LoginComponent},
+  {path : 'jobs' , component :  JobsComponent},
   {path : 'hachathon' , component :  HachathonsComponent},
   {path : '**', component : PagenotfoundComponent}
 ];

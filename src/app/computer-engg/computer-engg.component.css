@@ -1,21 +1,139 @@
+/* General Container */
+.container {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 25vw;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-right: 2px solid #ddd;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Content Area Styling */
+.content {
+  width: 75vw;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.semWise {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Semester and Elective Options */
+.AdvOption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s;
+}
+
+.AdvOption:hover {
+  background-color: #e9e9e9;
+}
+
+.AdvOption h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.caret-button {
+  font-size: 20px;
+  color: #777;
+}
+
+/* Content Area Styling */
+.content {
+  width: 75vw;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+/* Table Styling */
 table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #444;
+}
+
+td {
+  background-color: #fff;
+  color: #555;
+}
+
+tbody tr:hover {
+  background-color: #f7faff;
+}
+
+/* Elective Section Styles */
+.elective {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fefefe;
+}
+
+.elective h5 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #444;
+  margin-top: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
     width: 100%;
-    border-collapse: collapse;
+    height: auto;
+    border-right: none;
   }
-  
+
+  .content {
+    width: 100%;
+  }
+
+  .AdvOption h5 {
+    font-size: 16px;
+  }
+
   th, td {
-    border: 1px solid #ddd;
+    font-size: 14px;
     padding: 8px;
-    text-align: left;
   }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  .AdvOption:hover{
-    cursor: pointer;
-  }
-  .AdvOption{
-    display: flex;
-    justify-content: space-between;
-  }
+}
