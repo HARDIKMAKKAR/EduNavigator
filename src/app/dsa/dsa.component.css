@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.box {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}
+
+.content-btn {
+    width: 100%;
+    height: 8vh;
+    margin-bottom: 12px;
+    padding: 0 1em;
+    background-color: #1976D2;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content-btn:hover {
+    background-color: #0056b3;
+}
+
+.table-content {
+    background-color: white;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+.arrow {
+    font-size: 1.2em;
+}
+
+.table-content table {
+    width: 100%;
+    table-layout: fixed; /* Ensures columns don't expand beyond the table width */
+    border-collapse: collapse; /* Optional: for better table border appearance */
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+}
+
+.table-content table th, .table-content table td {
+    text-overflow: ellipsis; /* Truncates text with ellipsis if it overflows */
+    white-space: nowrap; /* Prevents wrapping text in table cells */
+    overflow: hidden;
+}
+
+.table-content {
+    overflow-x: auto; /* Adds horizontal scrolling to the entire content if necessary */
+    -webkit-overflow-scrolling: touch; /* Optional: for smooth scrolling on iOS */
+}

@@ -1,0 +1,150 @@
+<body>
+    <h1>DSA Content</h1>
+    <div class="box">
+        <button class="content-btn" (click)="toggleContent('stl')">
+            <span>Learn STL</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'stl'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of stlData ; let i  = index">
+                    <td>{{labelForSTLData[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+        <button class="content-btn" (click)="toggleContent('basics')">
+            <span>Basics</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'basics'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of basicData ; let i  = index">
+                    <td>{{labelForBasicData[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+        <button class="content-btn" (click)="toggleContent('patterns')">
+            <span>Pattern Printing</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'patterns'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of patternData ; let i  = index">
+                    <td>{{labelForPatternData[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+        <button class="content-btn" (click)="toggleContent('rec-problems')">
+            <span>Basic Recursion Problems</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'rec-problems'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of recData ; let i  = index">
+                    <td>{{labelForRec_ProbData[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+        <button class="content-btn" (click)="toggleContent('math-problems')">
+            <span>Basic Math Problems</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'math-problems'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of mathData ; let i  = index">
+                    <td>{{labelForMath_ProbData[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+        <button class="content-btn" (click)="toggleContent('hash-problems')">
+            <span>Basic HashMap Problems</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'hash-problems'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of hashData ; let i  = index">
+                    <td>{{labelForHash_ProbData[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+       
+    </div>
+</body>

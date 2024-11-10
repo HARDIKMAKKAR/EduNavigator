@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HachathonsComponent } from './hachathons/hachathons.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { ComputerEnggComponent } from './computer-engg/computer-engg.component';
+import { DsaComponent } from './dsa/dsa.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ComputerEnggComponent } from './computer-engg/computer-engg.component';
     PagenotfoundComponent,
     HachathonsComponent,
     JobsComponent,
-    ComputerEnggComponent
+    ComputerEnggComponent,
+    DsaComponent
   ],
   imports: [
     BrowserModule,

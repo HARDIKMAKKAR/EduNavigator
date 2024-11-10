@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HachathonsComponent } from './hachathons/hachathons.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { DsaComponent } from './dsa/dsa.component';
 const routes: Routes = [
   {path : '', redirectTo : 'home' , pathMatch : 'full'},
   {path : 'home' , component :  HomeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path : 'signup' , component :  SignupComponent},
   {path : 'login' , component :  LoginComponent},
   {path : 'jobs' , component :  JobsComponent},
-  {path : 'hachathon' , component :  HachathonsComponent},
+  {path : 'hachathon' , component :  HachathonsComponent}, 
+  {path : 'dsa' , component :  DsaComponent}, 
   {path : '**', component : PagenotfoundComponent}
 ];
 @NgModule({
