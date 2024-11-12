@@ -1,1 +1,19 @@
-<p>login works!</p>
+<body>
+    <div class="form-container">
+        <h2>Sign In</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" [(ngModel)]="emaill" name="email"  required placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" [(ngModel)]="passwordd" name="password"  required placeholder="Enter your password">
+            </div>
+            <button type="button" class="btn-submit" (click)="SignInUser()" >Sign In</button>
+        </form>
+        <div class="signup-link">
+            <p>Don't have an account? <a routerLink="/signup">Sign up</a></p>
+        </div>
+    </div>
+</body>

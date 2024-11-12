@@ -1,1 +1,19 @@
-<p>signup works!</p>
+<body>
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" [(ngModel)] ="emaill" name="email"  required placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" [(ngModel)] ="passwordd" name="password" required placeholder="Enter your password">
+            </div>
+            <button type="button" class="btn-submit" (click)="signUpUser()"  >Create Account</button>
+        </form>
+        <div class="signup-link">
+            <p>Already have an account? <a routerLink="/login">Sign In</a></p>
+        </div>
+    </div>
+</body>

@@ -16,6 +16,12 @@ import { HachathonsComponent } from './hachathons/hachathons.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { ComputerEnggComponent } from './computer-engg/computer-engg.component';
 import { DsaComponent } from './dsa/dsa.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import {AngularFireModule} from '@angular/fire/compat';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,9 +43,9 @@ import { DsaComponent } from './dsa/dsa.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+   AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [provideHttpClient()],
+  providers: [provideHttpClient(), provideFirebaseApp(() => initializeApp({"projectId":"edunavigator-dc324","appId":"1:721945582908:web:f1d0e256a04e4b59645239","databaseURL":"https://edunavigator-dc324-default-rtdb.firebaseio.com","storageBucket":"edunavigator-dc324.firebasestorage.app","apiKey":"AIzaSyC_M7LPPB_maegAUszypFRrKCaj_OolyUI","authDomain":"edunavigator-dc324.firebaseapp.com","messagingSenderId":"721945582908","measurementId":"G-R3ZLFL09V0"})), provideAuth(() => getAuth()), provideDatabase(() => getDatabase()), provideFirestore(() => getFirestore())],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

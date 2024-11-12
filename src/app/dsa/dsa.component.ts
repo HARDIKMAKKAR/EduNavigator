@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/authService';
+import { Route, Router } from '@angular/router';
 
 interface Data {
   topicName : string;
@@ -20,7 +22,10 @@ interface basicData{
   styleUrls: ['./dsa.component.css']
 })
 export class DsaComponent  implements OnInit{
-  constructor(private http : HttpClient){}
+  constructor(private http : HttpClient , 
+    private auth : AuthService,
+    private route : Router
+  ){}
   dataWant : any;
   dataFetch  :any;
   labelForBasicData : any;
@@ -30,6 +35,10 @@ export class DsaComponent  implements OnInit{
   labelForMath_ProbData : any;
   labelForHash_ProbData  : any;
   ngOnInit(): void {  
+    if(!!this.auth.user$){
+      alert('Sign In to continue');
+      this.route.navigate(['/home']);
+    }
     const url = 'https://edunavigator-dc324-default-rtdb.firebaseio.com/.json';
     this.http.get(url).subscribe(
       (response) => {
