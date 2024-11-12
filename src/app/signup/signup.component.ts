@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AuthService } from '../services/authService';
 
 interface signUpResponse {
   idToken : string , 
@@ -15,18 +16,13 @@ interface signUpResponse {
 })
 export class SignupComponent {
 
-  constructor(private http : HttpClient){}
+  constructor(private http : HttpClient,
+    private auth : AuthService
+  ){}
   emaill : string = '';
   passwordd : string = '';
 
   signUpUser(){
-    let  data  =  {
-      email : this.emaill,
-      password : this.passwordd,
-      returnSecureToken : true
-    }
-    this.http.post<signUpResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC_M7LPPB_maegAUszypFRrKCaj_OolyUI' , data).subscribe(res =>{
-      console.log(res);
-    });
+    this.auth.register(this.emaill,this.passwordd);
   }
 }
