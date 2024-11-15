@@ -9,6 +9,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HachathonsComponent } from './hachathons/hachathons.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { DsaComponent } from './dsa/dsa.component';
+import { TechnewsComponent } from './technews/technews.component';
+import { TestingComponentComponent } from './testing-component/testing-component.component';
+import { ExamComponent } from './exam/exam.component';
 const routes: Routes = [
   {path : '', redirectTo : 'home' , pathMatch : 'full'},
   {path : 'home' , component :  HomeComponent},
@@ -16,8 +19,11 @@ const routes: Routes = [
   {path : 'updates' , component :  UpdatesComponent},
   {path : 'signup' , component :  SignupComponent},
   {path : 'login' , component :  LoginComponent},
+  {path : 'technews' , component :  TechnewsComponent},
   {path : 'jobs' , component :  JobsComponent},
-  {path : 'hachathon' , component :  HachathonsComponent}, 
+  {path : 'testing' , component :  TestingComponentComponent},
+  {path : 'hackathon' , component :  HachathonsComponent}, 
+  {path : 'exams' , component :  ExamComponent}, 
   {path : 'dsa' , component :  DsaComponent}, 
   {path : '**', component : PagenotfoundComponent}
 ];

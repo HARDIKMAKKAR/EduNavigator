@@ -16,6 +16,7 @@ export class AuthService{
     this.fireAuth.signInWithEmailAndPassword(email , password) .then( () =>{
         localStorage.setItem('token' , 'true');
         alert('sign in successfull');
+        this.route.navigate(['home']);
     } , error => {
         alert(error.message);
     });

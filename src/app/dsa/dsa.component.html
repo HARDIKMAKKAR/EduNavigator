@@ -146,5 +146,128 @@
             </div>
         </div>
        
+        <button class="content-btn" (click)="toggleContent('basic-sorting')">
+            <span>Basic Sorting</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'basic-sorting'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of easySorting ; let i  = index">
+                    <td>{{labelForEasySorting[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+       
+       
+        <button class="content-btn" (click)="toggleContent('advance-sorting')">
+            <span>Advance Sorting</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'advance-sorting'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of advanceSorting ; let i  = index">
+                    <td>{{labelForAdvanceSorting[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+        <button class="content-btn" (click)="toggleContent('easyArrayProb')">
+            <span>Easy Problems on Array</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'easyArrayProb'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of easyArrayProb ; let i  = index">
+                    <td>{{labelForEasyArrayProblems[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+        <button class="content-btn" (click)="toggleContent('mediumArrayProb')">
+            <span>Medium Problems on Array</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'mediumArrayProb'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of mediumArrayProb ; let i  = index">
+                    <td>{{labelForMediumArrayProblems[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+        <button class="content-btn" (click)="toggleContent('hardArrayProb')">
+            <span>Hard Problems on Array</span>
+            <span class="arrow">&#x25BC;</span>
+        </button>
+        <div  class="table-content" *ngIf="content === 'hardArrayProb'">
+            <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Article</th>
+                    <th>Difficulty</th>
+                    <th>Practice</th>
+                    <th>Video</th>
+                </tr>
+                <tr *ngFor="let item of hardArrayProb ; let i  = index">
+                    <td>{{labelForHardArrayProblems[i]}}</td>
+                    <td><a href="{{item.Article}}">{{item.Article}}</a></td>
+                    <td>{{ item.Difficulty }}</td>
+                    <td><a href="{{item.Practice}}">{{item.Practice}}</a></td>
+                    <td><a href="{{item.Video}}">{{item.Video}}</a></td>   
+                </tr>
+            </table>
+            </div>
+        </div>
+       
     </div>
 </body>

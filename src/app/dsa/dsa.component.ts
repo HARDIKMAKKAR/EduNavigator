@@ -30,7 +30,16 @@ export class DsaComponent implements OnInit {
   ) { }
   dataWant: any;
   dataFetch: any;
+  easywant : any;
+  easyFetch : any;
+  arraywant : any;
+  arrayfetch : any;
   labelForBasicData: any;
+  labelForEasySorting : any;
+  labelForAdvanceSorting : any;
+  labelForEasyArrayProblems : any;
+  labelForMediumArrayProblems : any;
+  labelForHardArrayProblems : any;
   labelForSTLData: any;
   labelForPatternData: any;
   labelForRec_ProbData: any;
@@ -49,6 +58,19 @@ export class DsaComponent implements OnInit {
       this.http.get(url).subscribe(
         (response) => {
           this.dataFetch = Object.values(response);
+          console.log(this.dataFetch);
+          this.easywant = Object.values(this.dataFetch[0]);
+          this.arraywant = Object.values(this.dataFetch[2]);
+          this.labelForEasyArrayProblems = Object.keys(this.arraywant[0]);
+          this.labelForMediumArrayProblems = Object.keys(this.arraywant[2]);
+          this.labelForHardArrayProblems = Object.keys(this.arraywant[1]);
+          this.easyArrayProb = Object.values(this.arraywant[0]);
+          this.mediumArrayProb = Object.values(this.arraywant[2]);
+          this.hardArrayProb = Object.values(this.arraywant[1]);
+          this.labelForEasySorting = Object.keys(this.easywant[0]);
+          this.labelForAdvanceSorting = Object.keys(this.easywant[1]);
+          this.easySorting = Object.values(this.easywant[0]);
+          this.advanceSorting = Object.values(this.easywant[0]);
           this.dataWant = this.dataFetch[1];
           this.basicData = Object.values(this.dataWant);
           console.log(this.basicData);
@@ -78,7 +100,11 @@ hashData: basicData[] = [];
 patternData: basicData[] = [];
 recData: basicData[] = [];
 mathData: basicData[] = [];
-
+easySorting : basicData[] = [];
+advanceSorting : basicData[] = [];
+easyArrayProb : basicData[] = [];
+mediumArrayProb : basicData[] = [];
+hardArrayProb : basicData[] = [];
 
 toggleContent(section: string) {
   this.content = this.content === section ? null : section;

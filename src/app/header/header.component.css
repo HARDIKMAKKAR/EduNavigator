@@ -20,3 +20,69 @@ a{
     color: black;
     text-decoration: none;
 }
+
+/* Ensure the nav bar uses flexbox */
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  /* Ensuring the dropdown aligns with other nav items */
+  .dropdown {
+    position: relative;
+    display: flex; /* Ensure it behaves like the other nav items */
+    align-items: center; /* Center the dropdown text vertically */
+  }
+  
+  /* Make the dropdown-toggle behave like other nav links */
+  .dropdown-toggle {
+    background-color: transparent;
+    color: black; /* Change color if needed */
+    padding: 0; /* Remove padding for a text-only button */
+    border: none;
+    font-size: 16px; /* Adjust text size */
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  /* Dropdown menu position */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f8f9fa;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  /* Display dropdown when open */
+  .dropdown.show .dropdown-menu {
+    display: block;
+  }
+  
+  /* Add hover effect on dropdown items */
+  .dropdown-item {
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #ddd;
+  }
+  
+  .borderr{
+    border: 2px solid black; /* Light grey border */
+    width: 100px; /* Fixed width for each item */
+    height: 50px; /* Fixed height for each item */
+    display: flex;
+    align-items: center; /* Center align the content vertically */
+    justify-content: center; /* Center align the content horizontally */
+    margin: 5px; /* Space between items */
+    border-radius: 4px; /* Optional: Rounded corners */
+    box-sizing: border-box;
+  }

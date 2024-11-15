@@ -18,4 +18,14 @@ export class HeaderComponent implements OnInit {
   logOut(){
     this.auth.signOut();
   }
+  isDropdownOpen = false;  // To track whether the dropdown is open or closed
+
+  // Method to toggle dropdown visibility
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  closeDropdown(): void {
+    this.isDropdownOpen = false;
+  }
 }

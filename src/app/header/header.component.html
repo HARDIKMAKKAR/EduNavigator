@@ -69,51 +69,39 @@
         ></button> -->
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                <li class="nav-item">
+                <li class="nav-item borderr">
                     <a class="nav-link active" href="#" aria-current="page"
                         >Home
                         <span class="visually-hidden">(current)</span></a
                     >
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/hachathon">Hackathons</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/jobs">Jobs</a>
-                </li>
-                <li class="nav-item">
+                <li class="nav-item borderr">
                     <a class="nav-link" routerLink="/dsa">Master DSA</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Exam Updates</a>
+                
+                
+                <li class="nav-item dropdown borderr">
+                    <div class="dropdown" [class.show]="isDropdownOpen">
+                        <a
+                          href="javascript:void(0);"
+                          class="dropdown-toggle"
+                          (click)="toggleDropdown()"
+                          [attr.aria-expanded]="isDropdownOpen.toString()"
+                        >
+                          Updates
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" routerLink="/hackathon" (click)="closeDropdown()">Hackathons</a>
+                            <a class="dropdown-item" routerLink="/exams" (click)="closeDropdown()">Exam Updates</a>
+                            <a class="dropdown-item" routerLink="/technews" (click)="closeDropdown()">Tech News</a>
+                        </div>
+                    </div>
                 </li>
-                <li class="nav-item" *ngIf="!isAuthenticated" >
+                <li class="nav-item borderr" *ngIf="!isAuthenticated" >
                     <a class="nav-link" routerLink="/login">Sign In</a>
                 </li>
-                <li class="nav-item" *ngIf="isAuthenticated" >
+                <li class="nav-item borderr" *ngIf="isAuthenticated" >
                     <a style="cursor: pointer;" class="nav-link" (click)="logOut()">Sign Out</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="dropdownId"
-                        data-bs-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        >Dropdown</a
-                    >
-                    <div
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownId"
-                    >
-                        <a class="dropdown-item" href="#"
-                            >Action 1</a
-                        >
-                        <a class="dropdown-item" href="#"
-                            >Action 2</a
-                        >
-                    </div>
                 </li>
             </ul>
             <form class="d-flex my-2 my-lg-0">

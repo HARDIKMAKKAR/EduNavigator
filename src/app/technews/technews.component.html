@@ -1,0 +1,17 @@
+<div class="articles-container">
+    <div class="article-card" *ngFor="let article of articles">
+      <div class="article-image" *ngIf="article.urlToImage">
+        <img [src]="article.urlToImage" alt="{{ article.title }}" />
+      </div>
+      <div class="article-content">
+        <h2 class="article-title">{{ article.title }}</h2>
+        <div class="article-meta">
+          <span class="article-author">By {{ article.author }}</span> |
+          <span class="article-date">{{ article.publishedAt | date:'longDate' }}</span>
+        </div>
+        <p class="article-description">{{ article.description }}</p>
+        <a [href]="article.url" target="_blank" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+  

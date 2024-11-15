@@ -22,6 +22,9 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { TechnewsComponent } from './technews/technews.component';
+import { TestingComponentComponent } from './testing-component/testing-component.component';
+import { ExamComponent } from './exam/exam.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { environment } from '../environments/environment';
     HachathonsComponent,
     JobsComponent,
     ComputerEnggComponent,
-    DsaComponent
+    DsaComponent,
+    TechnewsComponent,
+    TestingComponentComponent,
+    ExamComponent
   ],
   imports: [
     BrowserModule,
