@@ -83,14 +83,14 @@
                 <li class="nav-item dropdown borderr">
                     <div class="dropdown" [class.show]="isDropdownOpen">
                         <a
-                          href="javascript:void(0);"
-                          class="dropdown-toggle"
-                          (click)="toggleDropdown()"
-                          [attr.aria-expanded]="isDropdownOpen.toString()"
-                        >
+                        href="javascript:void(0);"
+                        class="dropdown-toggle"
+                        (click)="toggleDropdown()"
+                        [attr.aria-expanded]="isDropdownOpen"
+                      >
                           Updates
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu"[class.show]="isDropdownOpen" >
                             <a class="dropdown-item" routerLink="/hackathon" (click)="closeDropdown()">Hackathons</a>
                             <a class="dropdown-item" routerLink="/exams" (click)="closeDropdown()">Exam Updates</a>
                             <a class="dropdown-item" routerLink="/technews" (click)="closeDropdown()">Tech News</a>
@@ -123,7 +123,7 @@
         <div class="down" style="width: 100vw;">
         <div class="mainContainerSubheader">
             <ul class="containerSubheader">
-                <li class="tab"><a href="#">Computer Engineering</a></li>
+                <li class="tab"><a routerLink="/computer-engineering">Computer Engineering</a></li>
                 <li class="tab"><a href="#">Computer Engineering </a></li>
                 <li class="tab"><a href="#">Computer Engineering (Hindi)</a></li>
                 <li class="tab"><a href="#">Information Technology</a></li>

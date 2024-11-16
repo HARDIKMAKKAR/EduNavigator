@@ -1,88 +1,175 @@
-.mainContainerSubheader .containerSubheader {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    scroll-behavior: smooth;
-    width: 100%;
-    -ms-overflow-style: none;
-    align-items: center;
-    overflow: scroll;
-    scrollbar-width: none
-}
-.tab{
-    width: 25%;
-    text-align: center;
+/* Primary Header Styling */
+.navbar {
+  background-color: #ffffff; /* White background */
+  color: black; /* Default text color */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  position: relative;
+  width: 100%;
 }
 
-a{
-    color: black;
-    text-decoration: none;
-}
-
-/* Ensure the nav bar uses flexbox */
+/* Navbar Items */
 .navbar-nav {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 15px; /* Space between items */
+}
+
+/* Remove hover effect for Home, Master DSA, Sign In */
+.navbar-nav .nav-link {
+  color: #4caf50 !important; /* Green color for links */
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: transparent !important; /* Remove hover background */
+  color: #4caf50 !important; /* Keep text green */
+  text-decoration: none !important;
+}
+
+/* Dropdown Toggle (Updates) - Green Color */
+.nav-item.dropdown .dropdown-toggle {
+  color: #4caf50 !important; /* Green color for Updates */
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Remove hover effect for the Updates dropdown */
+.nav-item.dropdown .dropdown-toggle:hover {
+  color: #4caf50; /* Keep it green */
+  background-color: transparent; /* No background change */
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+/* Search Form Styling */
+.form-control {
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.btn {
+  background-color: white;
+  color: #4caf50;
+  border: 1px solid #4caf50;
+  border-radius: 20px;
+  padding: 6px 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: #81c784;
+  color: white;
+  border-color: #81c784;
+}
+
+/* Secondary Header (Bar with Tabs) Styling */
+.mainContainerSubheader {
+  background-color: #81c784;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.containerSubheader {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.containerSubheader::-webkit-scrollbar {
+  display: none; /* Hide scrollbars */
+}
+
+/* Remove hover effect for tabs in secondary header */
+.tab {
+  padding: 10px 20px;
+  margin: 0 10px;
+  text-align: center;
+  background-color: white;
+  color: #4caf50;
+  border: 1px solid #4caf50;
+  border-radius: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: none !important; /* Remove transition for hover */
+}
+
+.tab:hover {
+  background-color: white !important; /* No background change on hover */
+  color: #4caf50 !important; /* Keep text green */
+}
+
+/* Links in Tabs */
+.mainContainerSubheader .tab a {
+  color: #4caf50 !important;
+  text-decoration: none !important;
+}
+
+.mainContainerSubheader .tab a:hover {
+  color: #4caf50 !important; /* No text color change */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
-  /* Ensuring the dropdown aligns with other nav items */
-  .dropdown {
-    position: relative;
-    display: flex; /* Ensure it behaves like the other nav items */
-    align-items: center; /* Center the dropdown text vertically */
+
+  .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
-  /* Make the dropdown-toggle behave like other nav links */
-  .dropdown-toggle {
-    background-color: transparent;
-    color: black; /* Change color if needed */
-    padding: 0; /* Remove padding for a text-only button */
-    border: none;
-    font-size: 16px; /* Adjust text size */
-    cursor: pointer;
-    display: inline-block;
+
+  .navbar-nav .nav-item {
+      margin: 5px 0;
   }
-  
-  /* Dropdown menu position */
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #f8f9fa;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    z-index: 1;
+
+  .mainContainerSubheader {
+      flex-wrap: nowrap;
   }
-  
-  /* Display dropdown when open */
-  .dropdown.show .dropdown-menu {
-    display: block;
-  }
-  
-  /* Add hover effect on dropdown items */
-  .dropdown-item {
-    padding: 12px 16px;
-    text-decoration: none;
-    color: black;
-    display: block;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #ddd;
-  }
-  
-  .borderr{
-    border: 2px solid black; /* Light grey border */
-    width: 100px; /* Fixed width for each item */
-    height: 50px; /* Fixed height for each item */
-    display: flex;
-    align-items: center; /* Center align the content vertically */
-    justify-content: center; /* Center align the content horizontally */
-    margin: 5px; /* Space between items */
-    border-radius: 4px; /* Optional: Rounded corners */
-    box-sizing: border-box;
-  }
+}

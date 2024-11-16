@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
@@ -12,6 +12,7 @@ import { DsaComponent } from './dsa/dsa.component';
 import { TechnewsComponent } from './technews/technews.component';
 import { TestingComponentComponent } from './testing-component/testing-component.component';
 import { ExamComponent } from './exam/exam.component';
+import { ComputerEnggComponent } from './computer-engg/computer-engg.component';
 const routes: Routes = [
   {path : '', redirectTo : 'home' , pathMatch : 'full'},
   {path : 'home' , component :  HomeComponent},
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path : 'signup' , component :  SignupComponent},
   {path : 'login' , component :  LoginComponent},
   {path : 'technews' , component :  TechnewsComponent},
-  {path : 'jobs' , component :  JobsComponent},
+  {path : 'computer-engineering' , component : ComputerEnggComponent},
   {path : 'testing' , component :  TestingComponentComponent},
   {path : 'hackathon' , component :  HachathonsComponent}, 
   {path : 'exams' , component :  ExamComponent}, 
