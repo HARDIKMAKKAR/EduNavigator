@@ -1,0 +1,19 @@
+<div *ngFor="let post of posts" class="linkedin-post">
+  <div class="post-header">
+    <!-- <img [src]="post.userProfilePic" alt="User Photo" class="profile-pic" /> -->
+    <div class="user-info">
+      <h4 class="user-name">{{ post.username }}</h4>
+      <p class="user-title">{{ post.postTitle }}</p>
+      <!-- <p class="post-date">{{ post.postDate | date: 'short' }}</p> -->
+    </div>
+  </div>
+  <div class="post-content">
+    <p>{{ post.postContent }}</p>
+    <!-- <img *ngIf="post.postImage" [src]="post.postImage" alt="Post Image" class="post-image" /> -->
+  </div>
+  <div class="post-actions">
+    <button  class="like-btn">👍 Like ({{ post.postLikes }})</button>
+    <button  class="comment-btn">💬 Comment ({{ post.postComments }})</button>
+    <button  class="share-btn">🔗 Share</button>
+  </div>
+</div>

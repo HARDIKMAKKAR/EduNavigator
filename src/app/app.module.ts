@@ -25,6 +25,7 @@ import { environment } from '../environments/environment';
 import { TechnewsComponent } from './technews/technews.component';
 import { TestingComponentComponent } from './testing-component/testing-component.component';
 import { ExamComponent } from './exam/exam.component';
+import { DiscussComponent } from './discuss/discuss.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ExamComponent } from './exam/exam.component';
     DsaComponent,
     TechnewsComponent,
     TestingComponentComponent,
-    ExamComponent
+    ExamComponent,
+    DiscussComponent
   ],
   imports: [
     BrowserModule,

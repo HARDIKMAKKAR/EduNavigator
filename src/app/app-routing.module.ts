@@ -13,11 +13,13 @@ import { TechnewsComponent } from './technews/technews.component';
 import { TestingComponentComponent } from './testing-component/testing-component.component';
 import { ExamComponent } from './exam/exam.component';
 import { ComputerEnggComponent } from './computer-engg/computer-engg.component';
+import { DiscussComponent } from './discuss/discuss.component';
 const routes: Routes = [
   {path : '', redirectTo : 'home' , pathMatch : 'full'},
   {path : 'home' , component :  HomeComponent},
   {path : 'chatbot' , component :  ChatbotComponent},
   {path : 'updates' , component :  UpdatesComponent},
+  {path : 'discuss' , component :  DiscussComponent},
   {path : 'signup' , component :  SignupComponent},
   {path : 'login' , component :  LoginComponent},
   {path : 'technews' , component :  TechnewsComponent},
