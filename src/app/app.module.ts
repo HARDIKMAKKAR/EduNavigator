@@ -25,6 +25,14 @@ import { environment } from '../environments/environment';
 import { TechnewsComponent } from './technews/technews.component';
 import { TestingComponentComponent } from './testing-component/testing-component.component';
 import { ExamComponent } from './exam/exam.component';
+import { ResumeBuilderComponent } from './resume-builder/resume-builder.component';
+import { ProfileComponent } from './resume/profile/profile.component';
+import { EducationComponent } from './resume/education/education.component';
+import { WorkComponent } from './resume/work/work.component';
+import { SkillsComponent } from './resume/skills/skills.component';
+import { ProjectsComponent } from './resume/projects/projects.component';
+import { AwardsComponent } from './resume/awards/awards.component';
+import { PreviewComponent } from './preview/preview.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,15 @@ import { ExamComponent } from './exam/exam.component';
     DsaComponent,
     TechnewsComponent,
     TestingComponentComponent,
-    ExamComponent
+    ExamComponent,
+    ResumeBuilderComponent,
+    ProfileComponent,
+    EducationComponent,
+    WorkComponent,
+    SkillsComponent,
+    ProjectsComponent,
+    AwardsComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,

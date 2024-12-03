@@ -1,0 +1,146 @@
+/* Reset margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set the body background color to white and text to black */
+  body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 12px; /* Minimum font size */
+  }
+  
+  /* Container for the resume preview */
+  .container {
+    width: 100%;
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header style */
+  .header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Section style for each block (Work, Skills, etc.) */
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Style for detail inside the profile section */
+  .detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .detail p {
+    margin: 0;
+    padding-right: 15px;
+  }
+  
+  /* Work experience item style */
+  .experience-item ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  .experience-item li {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .experience-item li ul {
+    padding-left: 20px;
+  }
+  
+  .experience-item li ul li {
+    font-size: 12px;
+    color: #444;
+  }
+  
+  /* Skills section */
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  ul li {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  ul li ul {
+    padding-left: 20px;
+  }
+  
+  ul li ul li {
+    font-size: 12px;
+    color: #444;
+  }
+  
+  /* Project section */
+  .projects ul li {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .projects ul li ul {
+    padding-left: 20px;
+  }
+  
+  .projects ul li ul li {
+    font-size: 12px;
+    color: #444;
+  }
+  
+  /* Awards section */
+  .awards ul li {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  /* Education section */
+  .education ul li {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  /* Button for downloading */
+  button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #555;
+  }
+  

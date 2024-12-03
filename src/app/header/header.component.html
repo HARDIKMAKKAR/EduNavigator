@@ -1,141 +1,52 @@
-<!-- <nav
-    class="navbar navbar-expand-sm navbar-dark bg-primary"
->
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button
-        class="navbar-toggler d-lg-none"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-    ></button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" href="#" aria-current="page"
-                    >Home <span class="visually-hidden">(current)</span></a
-                >
+<nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+    <div class="bar w-100">
+      <div class="up w-100">
+        <div class="collapse navbar-collapse w-100" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item borderr">
+              <a class="nav-link active" href="#" aria-current="page">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            <li class="nav-item borderr">
+              <a class="nav-link" routerLink="/dsa">Master DSA</a>
             </li>
-            <li class="nav-item dropdown">
-                <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="dropdownId"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >Dropdown</a
-                >
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Action 1</a>
-                    <a class="dropdown-item" href="#">Action 2</a>
+            <li>
+              <a class="nav-link" routerLink="/resume-builder">Build Resume</a>
+            </li>
+            <li class="nav-item dropdown borderr">
+              <div class="dropdown" [class.show]="isDropdownOpen">
+                <a href="javascript:void(0);" class="dropdown-toggle" (click)="toggleDropdown()" [attr.aria-expanded]="isDropdownOpen">Updates</a>
+                <div class="dropdown-menu" [class.show]="isDropdownOpen">
+                  <a class="dropdown-item" routerLink="/hackathon" (click)="closeDropdown()">Hackathons</a>
+                  <a class="dropdown-item" routerLink="/exams" (click)="closeDropdown()">Exam Updates</a>
+                  <a class="dropdown-item" routerLink="/technews" (click)="closeDropdown()">Tech News</a>
+                  
                 </div>
+              </div>
             </li>
-        </ul>
-        <form class="d-flex my-2 my-lg-0">
-            <input
-                class="form-control me-sm-2"
-                type="text"
-                placeholder="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                Search
-            </button>
-        </form>
-    </div>
-</nav> -->
-
-<nav
-    class="navbar navbar-expand-lg navbar-light bg-light"
-    style="max-width: 100vw;"
->
-<!-- <div class="up" style="padding: 0%; margin: 0%; width: 100vw;"> -->
-<div class="bar">
-    <div class="up" style="max-width: 100vw;">
-        <!-- <a class="navbar-brand" href="#">Navbar</a>
-        <button
-            class="navbar-toggler hidden-lg-up"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        ></button> -->
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                <li class="nav-item borderr">
-                    <a class="nav-link active" href="#" aria-current="page"
-                        >Home
-                        <span class="visually-hidden">(current)</span></a
-                    >
-                </li>
-                <li class="nav-item borderr">
-                    <a class="nav-link" routerLink="/dsa">Master DSA</a>
-                </li>
-                
-                
-                <li class="nav-item dropdown borderr">
-                    <div class="dropdown" [class.show]="isDropdownOpen">
-                        <a
-                        href="javascript:void(0);"
-                        class="dropdown-toggle"
-                        (click)="toggleDropdown()"
-                        [attr.aria-expanded]="isDropdownOpen"
-                      >
-                          Updates
-                        </a>
-                        <div class="dropdown-menu"[class.show]="isDropdownOpen" >
-                            <a class="dropdown-item" routerLink="/hackathon" (click)="closeDropdown()">Hackathons</a>
-                            <a class="dropdown-item" routerLink="/exams" (click)="closeDropdown()">Exam Updates</a>
-                            <a class="dropdown-item" routerLink="/technews" (click)="closeDropdown()">Tech News</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item borderr" *ngIf="!isAuthenticated" >
-                    <a class="nav-link" routerLink="/login">Sign In</a>
-                </li>
-                <li class="nav-item borderr" *ngIf="isAuthenticated" >
-                    <a style="cursor: pointer;" class="nav-link" (click)="logOut()">Sign Out</a>
-                </li>
-            </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input
-                    class="form-control me-sm-2"
-                    type="text"
-                    placeholder="Search"
-                />
-                <button
-                    class="btn btn-outline-success my-2 my-sm-0"
-                    type="submit"
-                >
-                    Search
-                </button>
-            </form>
+            <li class="nav-item borderr" *ngIf="!isAuthenticated">
+              <a class="nav-link" routerLink="/login">Sign In</a>
+              
+            </li>
+            <li class="nav-item borderr" *ngIf="isAuthenticated">
+              <a style="cursor: pointer;" class="nav-link" (click)="logOut()">Sign Out</a>
+            </li>
+          </ul>
+          <form class="d-flex my-2 my-lg-0 w-30">
+            <input class="form-control me-sm-2" type="text" placeholder="Search" />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
-    </div>
-    <!-- <div class="container"> -->
-        <div class="down" style="width: 100vw;">
-        <div class="mainContainerSubheader">
-            <ul class="containerSubheader">
-                <li class="tab"><a routerLink="/computer-engineering">Computer Engineering</a></li>
-                <li class="tab"><a href="#">Computer Engineering </a></li>
-                <li class="tab"><a href="#">Computer Engineering (Hindi)</a></li>
-                <li class="tab"><a href="#">Information Technology</a></li>
-                <!-- <li><a href="#"></a></li> -->
-            </ul>
+      </div>
+      <div class="down w-100">
+        <div class="mainContainerSubheader w-100">
+          <ul class="containerSubheader w-100">
+            <li class="tab"><a routerLink="/computer-engineering">Computer Engineering</a></li>
+            <li class="tab"><a href="#">Computer Engineering</a></li>
+            <li class="tab"><a href="#">Computer Engineering (Hindi)</a></li>
+            <li class="tab"><a href="#">Information Technology</a></li>
+          </ul>
         </div>
+      </div>
     </div>
-</div>
-</nav>
-
-
-
-
-
-
+  </nav>
+  

@@ -1,0 +1,30 @@
+<h3>Add Skill</h3>
+<form [formGroup]="skillForm" (ngSubmit)="submitSkills()">
+  <div formArrayName="skills">
+    <div *ngFor="let skillEntry of skills.controls; let i = index" [formGroupName]="i">
+      <div>
+        <label for="skill">Skill:</label>
+        <input id="skill" formControlName="name" required>
+        <div *ngIf="skillEntry.get('name').invalid && skillEntry.get('name').touched">
+          Skill name is required.
+        </div>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <input id="description" formControlName="description">
+      </div>
+      <button type="button" (click)="removeSkill(i)">Remove Skill</button>
+      <hr>
+    </div>
+  </div>
+  <button type="button" (click)="addSkill()">Add More Skill</button>
+  <button type="submit" [disabled]="skillForm.invalid">Submit Skills</button>
+</form>
+
+<h3>Your Skills</h3>
+<ul>
+  <li *ngFor="let skill of resumeService.resumeData.skills; let i = index">
+    <strong>{{ skill.name }}</strong>: {{ skill.description }}
+    <button (click)="removeSkill(i)">Remove</button>
+  </li>
+</ul>

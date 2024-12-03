@@ -1,0 +1,42 @@
+<h3>Add Work Experience</h3>
+<form [formGroup]="workForm" (ngSubmit)="addWork()">
+  <div>
+    <label for="title">Job Title:</label>
+    <input id="title" formControlName="title" required>
+  </div>
+  <div>
+    <label for="company">Company:</label>
+    <input id="company" formControlName="company" required>
+  </div>
+  <div>
+    <label for="startYear">Start Year:</label>
+    <input id="startYear" type="number" formControlName="startYear" required>
+  </div>
+  <div>
+    <label for="endYear">End Year:</label>
+    <input id="endYear" type="number" formControlName="endYear">
+  </div>
+
+  <h4>Descriptions</h4>
+  <div formArrayName="descriptions">
+    <div *ngFor="let desc of descriptions.controls; let i = index">
+      <input [formControlName]="i" placeholder="Description" required>
+      <button type="button" (click)="removeDescription(i)">-</button>
+      <button type="button" (click)="addDescription()">+</button>
+    </div>
+  </div>
+  
+
+  <button type="submit" [disabled]="workForm.invalid">Add Work</button>
+</form>
+
+<h3>Your Work Experience</h3>
+<ul>
+  <li *ngFor="let work of resumeService.resumeData.work; let i = index">
+    <strong>{{ work.title }}</strong> at {{ work.company }} ({{ work.startYear }} - {{ work.endYear }})
+    <ul>
+      <li *ngFor="let desc of work.descriptions">{{ desc }}</li>
+    </ul>
+    <button (click)="removeWork(i)">Remove</button>
+  </li>
+</ul>
