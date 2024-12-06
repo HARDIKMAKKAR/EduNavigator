@@ -17,6 +17,11 @@ interface basicData {
   Practice: any,
   Video: string
 }
+interface svg{
+  gfgPath:string,
+  youtubePath:string,
+  leetPath:string,
+}
 @Component({
   selector: 'app-dsa',
   templateUrl: './dsa.component.html',
@@ -109,4 +114,6 @@ hardArrayProb : basicData[] = [];
 toggleContent(section: string) {
   this.content = this.content === section ? null : section;
 }
+
+
 }

@@ -1,56 +1,60 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
-    <div class="bar w-100">
-      <div class="up w-100">
-        <div class="collapse navbar-collapse w-100" id="collapsibleNavId">
-          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-            <li class="nav-item borderr">
-              <a class="nav-link active" href="#" aria-current="page">Home</a>
-            </li>
-            <li class="nav-item borderr">
-              <a class="nav-link" routerLink="/dsa">Master DSA</a>
-            </li>
-            <li>
-              <a class="nav-link" routerLink="/resume-builder">Build Resume</a>
-            </li>
-          
-            <li class="nav-item dropdown borderr">
-              <div class="dropdown" [class.show]="isDropdownOpen">
-                <a href="javascript:void(0);" class="dropdown-toggle" (click)="toggleDropdown()" [attr.aria-expanded]="isDropdownOpen">Updates</a>
-                <div class="dropdown-menu" [class.show]="isDropdownOpen">
-                  <a class="dropdown-item" routerLink="/hackathon" (click)="closeDropdown()">Hackathons</a>
-                  <a class="dropdown-item" routerLink="/exams" (click)="closeDropdown()">Exam Updates</a>
-                  <a class="dropdown-item" routerLink="/technews" (click)="closeDropdown()">Tech News</a>
-                  
-                </div>
+  <div class="bar w-100">
+    <div class="up w-100">
+      <!-- Add the navbar toggler button for small devices -->
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Navbar Collapse Section -->
+      <div class="collapse navbar-collapse w-100" id="collapsibleNavId" [ngClass]="{'show': isNavbarOpen}">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+          <li class="nav-item borderr">
+            <a class="nav-link active" href="#" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item borderr">
+            <a class="nav-link" routerLink="/dsa">Master DSA</a>
+          </li>
+          <li>
+            <a class="nav-link" routerLink="/resume-builder">Build Resume</a>
+          </li>
+          <li class="nav-item dropdown borderr">
+            <div class="dropdown" [class.show]="isDropdownOpen">
+              <a href="javascript:void(0);" class="dropdown-toggle" (click)="toggleDropdown()" [attr.aria-expanded]="isDropdownOpen">Updates</a>
+              <div class="dropdown-menu" [class.show]="isDropdownOpen">
+                <a class="dropdown-item" routerLink="/hackathon" (click)="closeDropdown()">Hackathons</a>
+                <a class="dropdown-item" routerLink="/exams" (click)="closeDropdown()">Exam Updates</a>
+                <a class="dropdown-item" routerLink="/technews" (click)="closeDropdown()">Tech News</a>
               </div>
-            </li>
-            <li>
-                <a class="nav-link" >Welcome to Discuss</a>
-              </li>
-            <li class="nav-item borderr" *ngIf="!isAuthenticated">
-              <a class="nav-link" routerLink="/login">Sign In</a>
-              
-            </li>
-            <li class="nav-item borderr" *ngIf="isAuthenticated">
-              <a style="cursor: pointer;" class="nav-link" (click)="logOut()">Sign Out</a>
-            </li>
-          </ul>
-          <form class="d-flex my-2 my-lg-0 w-30">
-            <input class="form-control me-sm-2" type="text" placeholder="Search" />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-      <div class="down w-100">
-        <div class="mainContainerSubheader w-100">
-          <ul class="containerSubheader w-100">
-            <li class="tab"><a routerLink="/computer-engineering">Computer Engineering</a></li>
-            <li class="tab"><a href="#">Computer Engineering</a></li>
-            <li class="tab"><a href="#">Computer Engineering (Hindi)</a></li>
-            <li class="tab"><a href="#">Information Technology</a></li>
-          </ul>
-        </div>
+            </div>
+          </li>
+          <li>
+            <a class="nav-link">Welcome to Discuss</a>
+          </li>
+          <li class="nav-item borderr" *ngIf="!isAuthenticated">
+            <a class="nav-link" routerLink="/login">Sign In</a>
+          </li>
+          <li class="nav-item borderr" *ngIf="isAuthenticated">
+            <a style="cursor: pointer;" class="nav-link" (click)="logOut()">Sign Out</a>
+          </li>
+        </ul>
+        <form class="d-flex my-2 my-lg-0 w-30">
+          <input class="form-control me-sm-2" type="text" placeholder="Search" />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
     </div>
-  </nav>
-  
+    
+    <!-- Second Sub-header (Bar with Tabs) - Always visible -->
+    <div class="down w-100">
+      <div class="mainContainerSubheader w-200" style="display: flex; align-items: center;">
+        <ul class="containerSubheader w-200">
+          <li class="tab"><a routerLink="/computer-engineering">Computer Engineering</a></li>
+          <li class="tab"><a href="#">Computer Engineering-DS</a></li>
+          <li class="tab"><a href="#">Computer Engineering (Hindi)</a></li>
+          <li class="tab"><a href="#">Information Technology</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

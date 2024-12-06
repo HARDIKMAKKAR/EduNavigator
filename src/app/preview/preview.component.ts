@@ -4,6 +4,7 @@ import { PdfService } from '../pdf.service';
 import pdfMake from 'pdfmake/build/pdfmake';
 
 
+
 @Component({
   selector: 'app-preview',
   templateUrl: './preview.component.html',

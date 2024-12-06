@@ -83,4 +83,94 @@
   .footer a:hover {
     text-decoration: underline;
   }
+
   
+  /* Responsive Design */
+@media (max-width: 1200px) {
+  .features {
+    justify-content: space-evenly;
+  }
+
+  .feature {
+    flex: 1 1 45%;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .features-section h2 {
+    font-size: 24px;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    flex: 1 1 80%;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+
+  .footer nav {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .footer nav a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .header p {
+    font-size: 12px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .features-section h2 {
+    font-size: 22px;
+  }
+
+  .footer-content p {
+    font-size: 12px;
+  }
+
+  .footer nav a {
+    font-size: 12px;
+  }
+}
