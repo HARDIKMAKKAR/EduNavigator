@@ -1,0 +1,19 @@
+<h3>Profile</h3>
+<form (ngSubmit)="submit()" [formGroup]="profileForm" class="profile-form">
+  <label>Name:</label>
+  <input formControlName="name" class="form-input" />
+
+  <label>Email:</label>
+  <input formControlName="email" class="form-input" />
+
+  <label>Phone:</label>
+  <input formControlName="phone" class="form-input" />
+
+  <label>Location:</label>
+  <input formControlName="location" class="form-input" />
+
+  <label>Portfolio Link</label>
+  <input formControlName="link" class="form-input" />
+
+  <button [disabled]="profileForm.invalid" type="submit" class="submit-button">Save</button>
+</form>

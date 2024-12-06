@@ -1,0 +1,43 @@
+<h3>Add Education</h3>
+<form [formGroup]="educationForm" (ngSubmit)="submitEducation()">
+  <div formArrayName="educationEntries">
+    <div *ngFor="let entry of educationEntries.controls; let i = index" [formGroupName]="i">
+      <div>
+        <label for="degree">Degree:</label>
+        <input id="degree" formControlName="degree" required>
+        <div *ngIf="entry.get('degree').invalid && entry.get('degree').touched">Degree is required.</div>
+      </div>
+      <div>
+        <label for="field">Field of Study:</label>
+        <input id="field" formControlName="field">
+      </div>
+      <div>
+        <label for="institution">Institution:</label>
+        <input id="institution" formControlName="institution" required>
+        <div *ngIf="entry.get('institution').invalid && entry.get('institution').touched">Institution is required.</div>
+      </div>
+      <div>
+        <label for="location">Location:</label>
+        <input id="location" formControlName="location" required>
+        <div *ngIf="entry.get('location').invalid && entry.get('location').touched">Location is required.</div>
+      </div>
+      <div>
+        <label for="year">Year:</label>
+        <input id="year" type="number" formControlName="year" required>
+        <div *ngIf="entry.get('year').invalid && entry.get('year').touched">Year is required and must be 4 digits.</div>
+      </div>
+      <button type="button" (click)="removeEducation(i)">Remove</button>
+      <hr>
+    </div>
+  </div>
+  <button type="button" (click)="addEducation()">Add More Education</button>
+  <button type="submit" [disabled]="educationForm.invalid">Submit Education</button>
+</form>
+
+<h3>Your Education</h3>
+<ul>
+  <li *ngFor="let edu of resumeService.resumeData.education; let i = index">
+    <strong>{{ edu.degree }}</strong> in {{ edu.field }} from {{ edu.institution }} ({{ edu.year }})
+    <button (click)="removeEducation(i)">Remove</button>
+  </li>
+</ul>

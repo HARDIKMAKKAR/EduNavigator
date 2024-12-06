@@ -1,0 +1,45 @@
+<h3>Add Project</h3>
+<form [formGroup]="projectForm" (ngSubmit)="submitProjects()">
+  <div formArrayName="projectEntries">
+    <div *ngFor="let entry of projectEntries.controls; let i = index" [formGroupName]="i">
+      <div>
+        <label for="name">Project Name:</label>
+        <input id="name" formControlName="name" required>
+        <div *ngIf="entry.get('name').invalid && entry.get('name').touched">Project name is required.</div>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      <div>
+        <label for="link">Project Link:</label>
+        <input id="link" formControlName="link" required>
+        <div *ngIf="entry.get('link').invalid && entry.get('link').touched">Link is required and must be a valid URL.</div>
+      </div>
+      <div>
+        <h4>Tools Used</h4>
+        <div formArrayName="toolsUsed">
+          <div *ngFor="let tool of getToolsUsed(i).controls; let toolIndex = index">
+            <input [formControlName]="toolIndex" placeholder="Tool Used">
+            <button type="button" (click)="removeToolUsed(i, toolIndex)">Remove Tool</button>
+          </div>
+        </div>
+        <button type="button" (click)="addToolUsed(i)">Add Tool Used</button>
+      </div>
+      <button type="button" (click)="removeProject(i)">Remove Project</button>
+      <hr>
+    </div>
+  </div>
+  <button type="button" (click)="addProject()">Add More Project</button>
+  <button type="submit" [disabled]="projectForm.invalid">Submit Projects</button>
+</form>
+
+<h3>Your Projects</h3>
+<ul>
+  <li *ngFor="let project of resumeService.resumeData.projects; let i = index">
+    <strong>{{ project.name }}</strong>: {{ project.description }} <br>
+    <a [href]="project.link" target="_blank">View Project</a> <br>
+    <strong>Tools Used:</strong> {{ project.toolsUsed.join(', ') }}
+    <button (click)="removeProject(i)">Remove</button>
+  </li>
+</ul>

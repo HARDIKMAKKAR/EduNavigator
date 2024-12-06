@@ -2,7 +2,7 @@
 .navbar {
   background-color: #ffffff; /* White background */
   color: black; /* Default text color */
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
   position: relative;
   width: 100%;
@@ -17,16 +17,16 @@
   list-style: none;
 }
 
-.navbar-nav .nav-item {
-  margin: 0 15px; /* Space between items */
-}
+/* .navbar-nav .nav-item {
+  margin: 0 15px; /* Space between items 
+} */
 
 /* Remove hover effect for Home, Master DSA, Sign In */
 .navbar-nav .nav-link {
   color: #4caf50 !important; /* Green color for links */
   font-weight: bold;
   font-size: 16px;
-  padding: 8px 12px;
+  /* padding: 8px 12px; */
   border-radius: 5px;
 }
 
@@ -41,7 +41,7 @@
   color: #4caf50 !important; /* Green color for Updates */
   font-weight: bold;
   font-size: 16px;
-  padding: 8px 12px;
+  /* padding: 8px 12px; */
   border-radius: 5px;
   cursor: pointer;
   background-color: transparent;
@@ -172,4 +172,18 @@
   .mainContainerSubheader {
       flex-wrap: nowrap;
   }
+}
+
+/* Ensure navbar and all nested elements are full width */
+.navbar,
+.bar,
+.up,
+.down,
+.mainContainerSubheader,
+.containerSubheader {
+  width: 100%;
+  max-width: 100vw; /* Prevent horizontal scrolling */
+}
+.navbar-nav{
+  width: 50%;
 }

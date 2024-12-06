@@ -13,6 +13,13 @@ import { TechnewsComponent } from './technews/technews.component';
 import { TestingComponentComponent } from './testing-component/testing-component.component';
 import { ExamComponent } from './exam/exam.component';
 import { ComputerEnggComponent } from './computer-engg/computer-engg.component';
+import { ResumeBuilderComponent } from './resume-builder/resume-builder.component';
+import { ProfileComponent } from './resume/profile/profile.component';
+import { EducationComponent } from './resume/education/education.component';
+import { WorkComponent } from './resume/work/work.component';
+import { SkillsComponent } from './resume/skills/skills.component';
+import { ProjectsComponent } from './resume/projects/projects.component';
+import { AwardsComponent } from './resume/awards/awards.component';
 import { DiscussComponent } from './discuss/discuss.component';
 const routes: Routes = [
   {path : '', redirectTo : 'home' , pathMatch : 'full'},
@@ -28,6 +35,18 @@ const routes: Routes = [
   {path : 'hackathon' , component :  HachathonsComponent}, 
   {path : 'exams' , component :  ExamComponent}, 
   {path : 'dsa' , component :  DsaComponent}, 
+  {
+    path: 'resume-builder',
+    component: ResumeBuilderComponent,
+    children: [
+      { path: 'profile', component: ProfileComponent },
+      { path: 'education', component: EducationComponent },
+      { path: 'work', component: WorkComponent },
+      { path: 'skills', component: SkillsComponent },
+      { path: 'projects', component: ProjectsComponent },
+      { path: 'awards', component: AwardsComponent },
+    ]
+  },
   {path : '**', component : PagenotfoundComponent}
 ];
 @NgModule({

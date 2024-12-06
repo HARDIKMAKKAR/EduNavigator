@@ -1,0 +1,70 @@
+<div class="container" id="content-to-download">
+    <div class="header">
+        <h3>Profile</h3>
+        <div class="detail" style="display: flex; justify-content: center;">
+            <span><p><strong>Name:</strong> {{ resumeData.profile.name }}</p></span>
+            <span><p><strong>Email:</strong> {{ resumeData.profile.email }}</p></span>
+            <span><p><strong>Phone:</strong> {{ resumeData.profile.phone }}</p></span>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Work Experience</h3>
+        <div class="experience-item">
+            <ul>
+                <li *ngFor="let work of resumeData.work; let i = index">
+                    <strong>{{ work.title }}</strong> at {{ work.company }} ({{ work.startYear }} - {{ work.endYear }})
+                    <ul>
+                        <li *ngFor="let desc of work.descriptions">{{ desc }}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Skills</h3>
+        <ul>
+            <li *ngFor="let skill of resumeData.skills">
+                {{ skill.name }}
+                <ul>
+                    <li *ngFor="let skil of skill.tools">{{ skil }}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h3>Projects</h3>
+        <ul>
+            <li *ngFor="let project of resumeData.projects">
+                <strong>{{ project.name }}</strong>: {{ project.description }}
+                <ul>
+                    <li *ngFor="let tool of project.toolsUsed">
+                       {{ tool }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h3>Awards</h3>
+        <ul>
+            <li *ngFor="let award of resumeData.awards">
+                <strong>{{ award.title }}</strong> from {{ award.organization }} ({{ award.year }}): {{ award.description }}
+            </li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h3>Education</h3>
+        <ul>
+            <li *ngFor="let edu of resumeData.education">
+                <strong>{{ edu.degree }}</strong> in {{ edu.field }} from {{ edu.institution }} ({{ edu.year }})
+            </li>
+        </ul>
+    </div>
+</div>
+
+<button (click)="downloadHtmlPdf()">Download PDF</button>
