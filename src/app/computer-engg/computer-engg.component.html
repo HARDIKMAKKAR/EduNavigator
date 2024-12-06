@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="elective">
-        <div class="AdvOption" (click)="showElective('elective')">
+        <div class="AdvOption" (click)="showNested('sem8')">
           <h5>Electives</h5>
           <div class="caret-button" id="toggleButton">
           
@@ -85,9 +85,9 @@
           <tr *ngFor="let item of sem1subject; let i = index">
             <td>{{ i+1 }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.resource }}</td>
-            <td>{{ item.pyq }}</td>
-            <td>{{ item.yt }}</td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
       </table>
@@ -109,9 +109,9 @@
           <tr *ngFor="let item of sem2subject; let i = index">
             <td>{{ i+1 }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.resource }}</td>
-            <td>{{ item.pyq }}</td>
-            <td>{{ item.yt }}</td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
       </table>
@@ -133,9 +133,9 @@
           <tr *ngFor="let item of sem3subject; let i = index">
             <td>{{ i+1 }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.resource }}</td>
-            <td>{{ item.pyq }}</td>
-            <td>{{ item.yt }}</td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
       </table>
@@ -157,9 +157,9 @@
           <tr *ngFor="let item of sem4subject; let i = index">
             <td>{{ i+1 }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.resource }}</td>
-            <td>{{ item.pyq }}</td>
-            <td>{{ item.yt }}</td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
       </table>
@@ -181,9 +181,9 @@
           <tr *ngFor="let item of sem5subject; let i = index">
             <td>{{ i+1 }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.resource }}</td>
-            <td>{{ item.pyq }}</td>
-            <td>{{ item.yt }}</td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
       </table>
@@ -205,9 +205,9 @@
           <tr *ngFor="let item of sem6subject; let i = index">
             <td>{{ i+1 }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.resource }}</td>
-            <td>{{ item.pyq }}</td>
-            <td>{{ item.yt }}</td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
       </table>
@@ -229,16 +229,16 @@
           <tr *ngFor="let item of sem7subject; let i = index">
             <td>{{ i+1 }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.resource }}</td>
-            <td>{{ item.pyq }}</td>
-            <td>{{ item.yt }}</td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+            <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
       </table>
     </div>
 
     
-<div class="elective" *ngIf="elective">
+<div class="elective" *ngIf="sem8">
   <h5>Theory and Algorithms Code</h5>
   <table>
       <thead>
@@ -254,9 +254,9 @@
         <tr *ngFor="let item of algoElectiveSubs;let i = index">
           <td>{{ i+1 }}</td>
           <td>{{ item.subject }}</td>
-          <td>{{ item.resource }}</td>
-          <td>{{ item.pyq }}</td>
-          <td>{{ item.yt }}</td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
     </table>
@@ -275,9 +275,9 @@
         <tr *ngFor="let item of systemsElectiveSubs;let i = index">
           <td>{{ i+1 }}</td>
           <td>{{ item.subject }}</td>
-          <td>{{ item.resource }}</td>
-          <td>{{ item.pyq }}</td>
-          <td>{{ item.yt }}</td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
     </table>
@@ -296,9 +296,9 @@
         <tr *ngFor="let item of machineElectiveSubs;let i = index">
           <td>{{ i+1 }}</td>
           <td>{{ item.subject }}</td>
-          <td>{{ item.resource }}</td>
-          <td>{{ item.pyq }}</td>
-          <td>{{ item.yt }}</td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
     </table>
@@ -317,9 +317,9 @@
         <tr *ngFor="let item of appcodeElectiveSubs;let i = index">
           <td>{{ i+1 }}</td>
           <td>{{ item.subject }}</td>
-          <td>{{ item.resource }}</td>
-          <td>{{ item.pyq }}</td>
-          <td>{{ item.yt }}</td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-book" aria-hidden="true"></i></a></td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-file" aria-hidden="true"></i></a></td>
+          <td><a href="{{ item.resource }}" class=""><i class="fa fa-video-camera" aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
     </table>

@@ -95,7 +95,7 @@ export class ComputerEnggComponent {
   sem5 = 0;
   sem6 = 0;
   sem7 = 0;
-  elective = 0;
+  sem8 = 0;
   showNested(sem : string){
       this.sem1 = 0;
       this.sem2 = 0;
@@ -104,16 +104,17 @@ export class ComputerEnggComponent {
       this.sem5 = 0;
       this.sem6 = 0;
       this.sem7 = 0;
+      this.sem8=0;
       this[sem] = 1;
   }
-  showElective(elec:string){
-    this.sem1 = 0;
-    this.sem2 = 0;
-    this.sem3 = 0;
-    this.sem4 = 0;
-    this.sem5 = 0;
-    this.sem6 = 0;
-    this.sem7 = 0;
-    this.elective = 1;
-  }
+  // showElective(elec:string){
+  //   this.sem1 = 0;
+  //   this.sem2 = 0;
+  //   this.sem3 = 0;
+  //   this.sem4 = 0;
+  //   this.sem5 = 0;
+  //   this.sem6 = 0;
+  //   this.sem7 = 0;
+  //   this.elective = 1;
+  // }
 }

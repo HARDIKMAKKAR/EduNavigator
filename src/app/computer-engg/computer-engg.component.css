@@ -1,139 +1,157 @@
-/* General Container */
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   display: flex;
-  flex-direction: row;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  max-width: 100vw;
   height: 100vh;
-  margin: 0;
-  box-sizing: border-box;
 }
 
-/* Sidebar Styling */
 .sidebar {
-  width: 25vw;
-  background-color: #f5f5f5;
+  width: 250px;
+  background-color: #2f8e48; /* Green background */
   padding: 20px;
-  border-right: 2px solid #ddd;
-  height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box;
+  color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-/* Content Area Styling */
-.content {
-  width: 75vw;
-  padding: 20px;
-  overflow-y: auto;
-  background-color: #fff;
-  box-sizing: border-box;
-}
-.semWise {
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Sidebar Semester and Elective Options */
-.AdvOption {
+.sidebar .semWise {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  border-bottom: 1px solid #ddd;
+  flex-direction: column;
+}
+
+.sidebar .AdvOption {
+  background-color: #3a9c59; /* Darker green for the option */
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
   cursor: pointer;
-  background-color: #f5f5f5;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.AdvOption:hover {
-  background-color: #e9e9e9;
+.sidebar .AdvOption:hover {
+  background-color: #2f8e48; /* Lighter green on hover */
 }
 
-.AdvOption h5 {
+.sidebar h5 {
   margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+  color: white;
+  font-size: 16px;
 }
 
-.caret-button {
-  font-size: 20px;
-  color: #777;
+.sidebar .caret-button {
+  float: right;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
-/* Content Area Styling */
+.sidebar .AdvOption:hover .caret-button {
+  transform: rotate(180deg);
+}
+
 .content {
-  width: 75vw;
+  flex-grow: 1;
   padding: 20px;
+  background-color: white;
   overflow-y: auto;
-  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
 }
 
-/* Table Styling */
+h5 {
+  color: #2f8e48;
+  margin-top: 20px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
-th, td {
+table th, table td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ddd;
 }
 
-th {
-  background-color: #f0f0f0;
-  font-weight: bold;
-  color: #444;
+table th {
+  background-color: #2f8e48;
+  color: white;
 }
 
-td {
-  background-color: #fff;
-  color: #555;
+table td {
+  background-color: #f9f9f9;
 }
 
-tbody tr:hover {
-  background-color: #f7faff;
+table td a {
+  color: #2f8e48;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Elective Section Styles */
-.elective {
-  margin-top: 10px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  background-color: #fefefe;
+table td a:hover {
+  color: #1d6e32; /* Darker green on hover */
 }
 
-.elective h5 {
-  font-size: 17px;
-  font-weight: bold;
-  color: #444;
-  margin-top: 15px;
+table td i {
+  margin-right: 10px;
 }
 
-/* Responsive Adjustments */
+/* Smooth transition for content visibility */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
   .sidebar {
     width: 100%;
     height: auto;
-    border-right: none;
+    box-shadow: none;
   }
 
   .content {
-    width: 100%;
+    margin-top: 20px;
   }
+}
 
-  .AdvOption h5 {
-    font-size: 16px;
-  }
+/* Add hover effect on rows in the table */
+table tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
 
-  th, td {
-    font-size: 14px;
-    padding: 8px;
+/* Animation for side menu */
+@keyframes slideInSidebar {
+  0% {
+    transform: translateX(-100%);
   }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.sidebar {
+  animation: slideInSidebar 0.5s ease-out;
 }
