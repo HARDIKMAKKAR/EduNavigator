@@ -134,6 +134,41 @@ table td i {
   .content {
     margin-top: 20px;
   }
+
+  table th, table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    padding: 10px;
+  }
+
+  .sidebar h5 {
+    font-size: 14px;
+  }
+
+  .sidebar .AdvOption {
+    padding: 8px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  table th, table td {
+    padding: 6px;
+  }
+
+  .content {
+    padding: 10px;
+  }
 }
 
 /* Add hover effect on rows in the table */
