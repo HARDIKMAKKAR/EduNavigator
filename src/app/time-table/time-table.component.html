@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>📅 Time Table Curator</h2>
+    <p>
+      Our Smart Time Table Curator helps you plan your study schedule efficiently.
+      Simply enter your subjects, assign priorities and durations, and specify your available time slots.
+      The system uses algorithms like Knapsack and Priority Scheduling to generate your optimal timetable!
+    </p>
+  
+    <button class="open-modal-btn" (click)="openModal()">Generate Time Table</button>
+  
+    <!-- Modal -->
+    <div class="modal" *ngIf="showModal">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h3>📝 Fill in Your Details</h3>
+  
+        <form [formGroup]="timetableForm" (ngSubmit)="submit()">
+  
+          <div class="section">
+            <h4>Subjects</h4>
+            <button type="button" (click)="addSubject()">+ Add Subject</button>
+            <div formArrayName="subjects">
+              <div *ngFor="let subject of subjects.controls; let i=index" [formGroupName]="i">
+                <input formControlName="name" placeholder="Subject Name">
+                <input formControlName="priority" type="number" placeholder="Priority">
+                <input formControlName="duration" type="number" placeholder="Duration (mins)">
+                <button type="button" (click)="removeSubject(i)">Remove</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="section">
+            <h4>Time Slots</h4>
+            <button type="button" (click)="addTimeSlot()">+ Add Time Slot</button>
+            <div formArrayName="time_slots">
+              <div *ngFor="let slot of time_slots.controls; let i=index" [formGroupName]="i">
+                <input formControlName="start" placeholder="Start Time (e.g., 1:00 PM)">
+                <input formControlName="end" placeholder="End Time (e.g., 3:00 PM)">
+                <input formControlName="available" type="number" placeholder="Available Minutes">
+                <button type="button" (click)="removeTimeSlot(i)">Remove</button>
+              </div>
+            </div>
+          </div>
+  
+          <button class="submit-btn" type="submit" [disabled]="loading">Generate</button>
+        </form>
+      </div>
+    </div>
+  
+    <div id="gantt_chart" style="width: 100%; height: 500px;"></div>

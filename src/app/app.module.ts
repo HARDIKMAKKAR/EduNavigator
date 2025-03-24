@@ -34,6 +34,7 @@ import { ProjectsComponent } from './resume/projects/projects.component';
 import { AwardsComponent } from './resume/awards/awards.component';
 import { PreviewComponent } from './preview/preview.component';
 import { DiscussComponent } from './discuss/discuss.component';
+import { TimeTableComponent } from './time-table/time-table.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { DiscussComponent } from './discuss/discuss.component';
     ProjectsComponent,
     AwardsComponent,
     PreviewComponent,
-    DiscussComponent
+    DiscussComponent,
+    TimeTableComponent
   ],
   imports: [
     BrowserModule,

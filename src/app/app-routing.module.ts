@@ -21,6 +21,7 @@ import { SkillsComponent } from './resume/skills/skills.component';
 import { ProjectsComponent } from './resume/projects/projects.component';
 import { AwardsComponent } from './resume/awards/awards.component';
 import { DiscussComponent } from './discuss/discuss.component';
+import { TimeTableComponent } from './time-table/time-table.component';
 const routes: Routes = [
   {path : '', redirectTo : 'home' , pathMatch : 'full'},
   {path : 'home' , component :  HomeComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path : 'hackathon' , component :  HachathonsComponent}, 
   {path : 'exams' , component :  ExamComponent}, 
   {path : 'dsa' , component :  DsaComponent}, 
+  {path:'time-table',component:TimeTableComponent},
   {
     path: 'resume-builder',
     component: ResumeBuilderComponent,
