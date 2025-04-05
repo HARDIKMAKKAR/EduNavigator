@@ -1,0 +1,50 @@
+<div class="form-container">
+    <h2>Career Roadmap Generator</h2>
+    <form [formGroup]="careerForm" (ngSubmit)="onSubmit()">
+      
+      <!-- User Information -->
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text" required />
+  
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" required />
+  
+      <!-- Career Interests (Multi-Select using Checkboxes) -->
+      <label>Select Your Career Interests:</label>
+      <div class="checkbox-group">
+        <div *ngFor="let career of careerOptions">
+          <input type="checkbox" [value]="career" (change)="onCheckboxChange($event)" />
+          <label>{{ career }}</label>
+        </div>
+      </div>
+  
+      <!-- Academic Performance -->
+      <label for="marks">Average Academic Percentage:</label>
+      <input id="marks" formControlName="marks" type="number" min="0" max="100" required />
+  
+      <!-- Skill Levels -->
+      <label>Rate Your Skills (1-5):</label>
+      <div *ngFor="let skill of skillOptions">
+        <label>{{ skill }}:</label>
+        <input type="number" formControlName="{{ skill }}" min="1" max="5" />
+      </div>
+  
+      <!-- Preferred Study Mode -->
+      <label for="studyMode">Preferred Study Mode:</label>
+      <select id="studyMode" formControlName="studyMode">
+        <option value="Online">Online</option>
+        <option value="Offline">Offline</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="careerForm.invalid">Generate Roadmap</button>
+    </form>
+  
+    <!-- Display Career Path (if available) -->
+    <div *ngIf="careerPath">
+      <h3>Your Suggested Career Path:</h3>
+      <p>{{ careerPath }}</p>
+    </div>
+  </div>
+  
