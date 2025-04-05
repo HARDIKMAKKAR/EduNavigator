@@ -35,6 +35,7 @@ import { AwardsComponent } from './resume/awards/awards.component';
 import { PreviewComponent } from './preview/preview.component';
 import { DiscussComponent } from './discuss/discuss.component';
 import { TimeTableComponent } from './time-table/time-table.component';
+import { CareerRoadmapFormComponent } from './career-roadmap-form/career-roadmap-form.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { TimeTableComponent } from './time-table/time-table.component';
     AwardsComponent,
     PreviewComponent,
     DiscussComponent,
-    TimeTableComponent
+    TimeTableComponent,
+    CareerRoadmapFormComponent
   ],
   imports: [
     BrowserModule,

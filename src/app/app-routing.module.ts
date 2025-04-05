@@ -22,6 +22,7 @@ import { ProjectsComponent } from './resume/projects/projects.component';
 import { AwardsComponent } from './resume/awards/awards.component';
 import { DiscussComponent } from './discuss/discuss.component';
 import { TimeTableComponent } from './time-table/time-table.component';
+import { CareerRoadmapFormComponent } from './career-roadmap-form/career-roadmap-form.component';
 const routes: Routes = [
   {path : '', redirectTo : 'home' , pathMatch : 'full'},
   {path : 'home' , component :  HomeComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path : 'exams' , component :  ExamComponent}, 
   {path : 'dsa' , component :  DsaComponent}, 
   {path:'time-table',component:TimeTableComponent},
+  {path:'career-roadmap',component:CareerRoadmapFormComponent},
   {
     path: 'resume-builder',
     component: ResumeBuilderComponent,
