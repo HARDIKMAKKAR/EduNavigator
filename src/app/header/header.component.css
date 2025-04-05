@@ -96,19 +96,20 @@
 }
 
 /* Secondary Header (Bar with Tabs) Styling */
+/* Secondary Header (Bar with Tabs) Styling */
 .mainContainerSubheader {
   background-color: #81c784;
   padding: 10px 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Align items to the left */
   align-items: center;
-  overflow-x: auto;
-  white-space: nowrap;
+  overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 .containerSubheader {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; /* Prevent wrapping of tabs */
   margin: 0;
   padding: 0;
   width: 100%;
@@ -118,7 +119,6 @@
   display: none; /* Hide scrollbars */
 }
 
-/* Remove hover effect for tabs in secondary header */
 .tab {
   padding: 10px 20px;
   margin: 0 10px;
@@ -130,8 +130,8 @@
   font-size: 14px;
   white-space: nowrap;
   cursor: pointer;
-  transition: none !important; /* Remove transition for hover */
 }
+
 
 .tab:hover {
   background-color: white !important; /* No background change on hover */
@@ -210,39 +210,46 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    width: 100%;
+    padding: 10px 5px;
   }
 
   .navbar-nav .nav-item {
-    margin: 5px 0;
+    font-size: 12px;
   }
 
-  .navbar-nav .nav-link {
-    font-size: 14px;
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .form-control {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  .btn {
+    padding: 6px 15px;
   }
 
   .mainContainerSubheader {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px; /* Add some margin to separate from the navbar */
+    display: block;
+    padding: 10px;
+    margin-top: 0; /* Remove any extra margin */
   }
 
   .containerSubheader {
-    flex-direction: column;
+    display: block;
     width: 100%;
   }
 
   .tab {
-    margin: 10px 0;
-    padding: 10px;
+    display: inline-block;
+    padding: 5px;
     font-size: 12px;
-    text-align: center;
+    margin: 0 5px;
+  }
+
+  .tab a {
+    font-size: 12px;
   }
 }
 

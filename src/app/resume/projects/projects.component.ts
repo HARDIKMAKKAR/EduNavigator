@@ -7,6 +7,7 @@ import { ResumeService } from '../../resume.service'; // Import the service
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
+
 export class ProjectsComponent implements OnInit {
   projectForm: FormGroup;
 
