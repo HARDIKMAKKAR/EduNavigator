@@ -10,23 +10,25 @@
       <div class="collapse navbar-collapse w-100" id="collapsibleNavId" [ngClass]="{'show': isNavbarOpen}">
         <ul class="navbar-nav me-auto mt-2 mt-lg-0">
           <li class="nav-item borderr">
-            <a class="nav-link active" href="#" aria-current="page">Home</a>
+            <a class="nav-link" routerLink="/home"
+            routerLinkActive="active" href="#" aria-current="page">Home</a>
           </li>
           <li class="nav-item borderr">
-            <a class="nav-link" routerLink="/dsa">Master DSA</a>
+            <a class="nav-link" routerLink="/dsa"
+            routerLinkActive="active">Master DSA</a>
           </li>
           <li class="nav-item borderr">
-            <a class="nav-link" routerLink="/time-table">Time Table</a>
+            <a class="nav-link" routerLink="/time-table" routerLinkActive="active">Time Table</a>
           </li>
           <li class="nav-item borderr">
-            <a class="nav-link" routerLink="/career-roadmap">Career Roadmap</a>
+            <a class="nav-link" routerLink="/career-roadmap" routerLinkActive="active">Career Roadmap</a>
           </li>
           <li>
-            <a class="nav-link" routerLink="/resume-builder">Build Resume</a>
+            <a class="nav-link" routerLink="/resume-builder" routerLinkActive="active">Build Resume</a>
           </li>
           <li class="nav-item dropdown borderr">
             <div class="dropdown" [class.show]="isDropdownOpen">
-              <a href="javascript:void(0);" class="dropdown-toggle" (click)="toggleDropdown()" [attr.aria-expanded]="isDropdownOpen">Updates</a>
+              <a href="javascript:void(0);" class="dropdown-toggle nav-link" (click)="toggleDropdown()" [attr.aria-expanded]="isDropdownOpen">Updates</a>
               <div class="dropdown-menu" [class.show]="isDropdownOpen">
                 <a class="dropdown-item" routerLink="/hackathon" (click)="closeDropdown()">Hackathons</a>
                 <a class="dropdown-item" routerLink="/exams" (click)="closeDropdown()">Exam Updates</a>
@@ -37,22 +39,25 @@
           <li>
             <a href="https://edunavigator-dc324.web.app/home"></a>
           </li>
+          <li class="nav-item borderr">
+            <a class="nav-link" routerLink="/chat-room" routerLinkActive="active">ChatRoom</a>
+          </li>
           <li class="nav-item borderr" *ngIf="!isAuthenticated">
-            <a class="nav-link" routerLink="/login">Sign In</a>
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Sign In</a>
           </li>
           <li class="nav-item borderr" *ngIf="isAuthenticated">
             <a style="cursor: pointer;" class="nav-link" (click)="logOut()">Sign Out</a>
           </li>
         </ul>
-        <form class="d-flex my-2 my-lg-0 w-30">
+        <!-- <form class="d-flex my-2 my-lg-0 w-30">
           <input class="form-control me-sm-2" type="text" placeholder="Search" />
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> -->
       </div>
     </div>
     
     <!-- Second Sub-header (Bar with Tabs) - Always visible -->
-    <div class="down w-100">
+    <!-- <div class="down w-100">
       <div class="mainContainerSubheader w-200" style="display: flex; align-items: center;">
         <ul class="containerSubheader w-200">
           <li class="tab"><a routerLink="/computer-engineering">Computer Engineering</a></li>
@@ -61,6 +66,6 @@
           <li class="tab"><a href="#">Information Technology</a></li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </div>
 </nav>

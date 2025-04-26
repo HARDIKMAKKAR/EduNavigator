@@ -50,53 +50,60 @@ export class DsaComponent implements OnInit {
   labelForRec_ProbData: any;
   labelForMath_ProbData: any;
   labelForHash_ProbData: any;
-  ngOnInit(): void {
-   this.afAuth.authState.subscribe(user =>{
-    if(!user){
-      alert('Sign in to continue');
-      this.route.navigate(['/home']);
-    }
-    if(user){
-     user.getIdToken().then( token => {
-      console.log(user);
-      const url = `https://edunavigator-dc324-default-rtdb.firebaseio.com/.json?auth=${token}`;
-      this.http.get(url).subscribe(
-        (response) => {
+  async ngOnInit(): Promise<void> {
+    const subscription = this.auth.isLoggedIn$.subscribe((isLoggedIn) => {
+      if (!isLoggedIn) {
+        alert('Sign in to continue');
+        this.route.navigate(['/home']);
+        subscription.unsubscribe(); // ✅ Stop listening after redirect
+      } else {
+        const token = localStorage.getItem('EduNavToken')?.toString();
+        const url = `https://edunavigator-dc324-default-rtdb.firebaseio.com/.json?`; // ✅ Add token to URL
+  
+        this.http.get(url).subscribe(response => {
           this.dataFetch = Object.values(response);
-          console.log(this.dataFetch);
           this.easywant = Object.values(this.dataFetch[0]);
           this.arraywant = Object.values(this.dataFetch[2]);
+  
           this.labelForEasyArrayProblems = Object.keys(this.arraywant[0]);
           this.labelForMediumArrayProblems = Object.keys(this.arraywant[2]);
           this.labelForHardArrayProblems = Object.keys(this.arraywant[1]);
+  
           this.easyArrayProb = Object.values(this.arraywant[0]);
           this.mediumArrayProb = Object.values(this.arraywant[2]);
           this.hardArrayProb = Object.values(this.arraywant[1]);
+  
           this.labelForEasySorting = Object.keys(this.easywant[0]);
           this.labelForAdvanceSorting = Object.keys(this.easywant[1]);
           this.easySorting = Object.values(this.easywant[0]);
-          this.advanceSorting = Object.values(this.easywant[0]);
+          this.advanceSorting = Object.values(this.easywant[1]);
+  
           this.dataWant = this.dataFetch[1];
           this.basicData = Object.values(this.dataWant);
-          console.log(this.basicData);
+  
           this.labelForRec_ProbData = Object.keys(this.basicData[2]);
           this.labelForMath_ProbData = Object.keys(this.basicData[1]);
           this.labelForHash_ProbData = Object.keys(this.basicData[0]);
           this.labelForPatternData = Object.keys(this.basicData[3]);
           this.labelForBasicData = Object.keys(this.basicData[5]);
           this.labelForSTLData = Object.keys(this.basicData[4]);
+  
           this.patternData = Object.values(this.basicData[3]);
           this.stlData = Object.values(this.basicData[4]);
           this.recData = Object.values(this.basicData[2]);
           this.mathData = Object.values(this.basicData[1]);
           this.hashData = Object.values(this.basicData[0]);
           this.basicData = Object.values(this.basicData[5]);
-        }
-      );
-     })
-    }
-   })
+        });
+  
+        subscription.unsubscribe(); // ✅ Only need to fetch once
+      }
+    });
+  
+    // Make sure to trigger the token check
+    this.auth.checkForSignedInUser();
   }
+  
 
 content: string | null = null;
 basicData: basicData[] = [];

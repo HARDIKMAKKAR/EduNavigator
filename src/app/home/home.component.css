@@ -7,8 +7,14 @@
   .header {
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(to right, #4caf50, #81c784);
-    color: white;
+    /* background: linear-gradient(to right, #4caf50, #81c784); */
+    /* background: linear-gradient(to right, #FFF3E0, #FFE0B2); */
+    background: linear-gradient(to right, #E5E7EB, #D1D5DB);
+    /* background-color: #BFECFF; */
+
+
+
+    color: black;
   }
   
   .header h1 {
@@ -23,7 +29,7 @@
   
   .cta-button {
     background-color: #ffffff;
-    color: #4caf50;
+    color: black;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -43,7 +49,7 @@
   
   .features-section h2 {
     margin-bottom: 20px;
-    color: #4caf50;
+    color: black;
   }
   
   .features {
@@ -63,7 +69,7 @@
   }
   
   .feature h3 {
-    color: #4caf50;
+    color: black;
     margin-bottom: 10px;
   }
   
@@ -75,7 +81,7 @@
   }
   
   .footer a {
-    color: #81c784;
+    color: white;
     margin: 0 10px;
     text-decoration: none;
   }

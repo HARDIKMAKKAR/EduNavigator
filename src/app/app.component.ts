@@ -10,5 +10,5 @@ export class AppComponent {
   constructor(private router : Router
     , private route : ActivatedRoute
   ){}
-  title = 'app';
+  title = 'EduNavigator';
 }

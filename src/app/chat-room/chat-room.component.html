@@ -1,0 +1,29 @@
+<div class="chat-container">
+  <aside class="sidebar">
+    <div class="user-list">
+      <h3>Active Users</h3>
+      <div class="user-list-scroll">
+        <ul>
+          <li *ngFor="let user of users">{{ user }}</li>
+        </ul>
+      </div>
+    </div>
+    <button class="leave-button" (click)="leaveRoom()">Leave Room</button>
+  </aside>
+
+  <main class="chat-main">
+    <div class="chat-messages" #chatMessages>
+      <div *ngFor="let message of messages" class="message" [ngClass]="{'system-message': message.user === 'System', 'user-message': message.user !== 'System'}">
+        <strong>{{ message.user }}:</strong> {{ message.text }}
+      </div>
+    </div>
+    
+
+    <div class="chat-form-container">
+      <form (submit)="sendMessage(); $event.preventDefault()">
+        <input [(ngModel)]="msg" name="msg" placeholder="Type a message" required />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </main>
+</div>

@@ -34,6 +34,6 @@ export class ResumeBuilderComponent implements OnInit {
     this.resumeData.awards = data;
   }
   ngOnInit(): void {
-    
+    this.route.navigateByUrl('/resume-builder/profile');
   }
 }

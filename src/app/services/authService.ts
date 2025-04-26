@@ -1,17 +1,26 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Route, Router } from "@angular/router";
-import { Observable } from "rxjs";
-@Injectable({providedIn : 'root'})
+import { BehaviorSubject, Observable } from "rxjs";
+import { LoginSService } from "../shared/login-s.service";
+
+@Injectable({
+  providedIn: 'root'
+})
+
 export class AuthService{
 
+
+  isLoggedIn = false;
   user$ : Observable<any>;
   constructor(private fireAuth : AngularFireAuth ,
-    private route : Router
+    private route : Router,
+    private service : LoginSService
   ){
     this.user$ = fireAuth.authState;
   }
-
+  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+  public isLoggedIn$ = this.isLoggedInSubject.asObservable();
   signIn(email : string , password : string){
     this.fireAuth.signInWithEmailAndPassword(email , password) .then( () =>{
         localStorage.setItem('token' , 'true');
@@ -22,7 +31,30 @@ export class AuthService{
     });
   }
 
+  checkForSignedInUser(): void {
+    const token = localStorage.getItem('EduNavToken');
+    if (!token) {
+      this.isLoggedInSubject.next(false);
+      return;
+    }
 
+    this.service.decodeToken(token).subscribe(
+      (res) => {
+        const currentTime = Math.floor(Date.now() / 1000);
+        const isValid = res?.data?.exp > currentTime;
+        this.isLoggedInSubject.next(isValid);
+      },
+      () => {
+        this.isLoggedInSubject.next(false);
+      }
+    );
+  }
+
+  // Optional: to expose current value directly
+  get isAuthenticated(): boolean {
+    return this.isLoggedInSubject.getValue();
+  }
+  
   register(email : string , password : string){
     this.fireAuth.createUserWithEmailAndPassword(email , password).then( () =>{
         alert('Successfully registered');
@@ -39,4 +71,7 @@ export class AuthService{
         alert(error.message);
     })
   }
+
+
+
 }

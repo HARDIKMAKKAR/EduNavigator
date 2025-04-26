@@ -23,6 +23,7 @@ import { AwardsComponent } from './resume/awards/awards.component';
 import { DiscussComponent } from './discuss/discuss.component';
 import { TimeTableComponent } from './time-table/time-table.component';
 import { CareerRoadmapFormComponent } from './career-roadmap-form/career-roadmap-form.component';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
 const routes: Routes = [
   {path : '', redirectTo : 'home' , pathMatch : 'full'},
   {path : 'home' , component :  HomeComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path : 'hackathon' , component :  HachathonsComponent}, 
   {path : 'exams' , component :  ExamComponent}, 
   {path : 'dsa' , component :  DsaComponent}, 
+  {path : 'chat-room' , component :  ChatRoomComponent}, 
   {path:'time-table',component:TimeTableComponent},
   {path:'career-roadmap',component:CareerRoadmapFormComponent},
   {

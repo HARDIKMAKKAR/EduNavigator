@@ -10,13 +10,18 @@ export class HeaderComponent implements OnInit {
   isAuthenticated = false;
   constructor(private auth : AuthService){}
   ngOnInit(): void {
-    this.auth.user$.subscribe(user => {
-      this.isAuthenticated = !! user;
+    this.auth.isLoggedIn$.subscribe((status) => {
+      this.isAuthenticated = status;
     });
+  
+    // Trigger the check once on init
+    this.auth.checkForSignedInUser();
   }
 
   logOut(){
-    this.auth.signOut();
+    localStorage.removeItem('EduNavToken');
+    this.auth.checkForSignedInUser();
+    
   }
   // To track whether the dropdown is open or closed
 
