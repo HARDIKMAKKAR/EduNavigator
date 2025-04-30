@@ -1,50 +1,107 @@
 <div class="form-container">
-    <h2>Career Roadmap Generator</h2>
-    <form [formGroup]="careerForm" (ngSubmit)="onSubmit()">
-      
-      <!-- User Information -->
+  <h2>Smart Career Roadmap Generator</h2>
+
+  <form [formGroup]="careerForm" (ngSubmit)="onSubmit()">
+    <!-- Name & Email -->
+    <div class="form-group">
       <label for="name">Name:</label>
-      <input id="name" formControlName="name" type="text" required />
-  
+      <input id="name" formControlName="name" type="text" placeholder="Enter your name" />
+      <div *ngIf="careerForm.get('name')?.invalid && careerForm.get('name')?.touched" class="error-message">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
       <label for="email">Email:</label>
-      <input id="email" formControlName="email" type="email" required />
-  
-      <!-- Career Interests (Multi-Select using Checkboxes) -->
-      <label>Select Your Career Interests:</label>
-      <div class="checkbox-group">
-        <div *ngFor="let career of careerOptions">
-          <input type="checkbox" [value]="career" (change)="onCheckboxChange($event)" />
-          <label>{{ career }}</label>
+      <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+      <div *ngIf="careerForm.get('email')?.invalid && careerForm.get('email')?.touched" class="error-message">
+        Valid email is required
+      </div>
+    </div>
+
+    <!-- Academic Marks -->
+    <div class="form-group">
+      <label for="marks">Academic Percentage:</label>
+      <input id="marks" formControlName="marks" type="number" min="0" max="100" placeholder="e.g. 85" />
+      <div *ngIf="careerForm.get('marks')?.invalid && careerForm.get('marks')?.touched" class="error-message">
+        Valid marks between 0-100 are required
+      </div>
+    </div>
+
+    <!-- Career Interest with Autocomplete -->
+    <div class="form-group">
+      <label for="interest">Career Interest:</label>
+      <input id="interest" list="interests" formControlName="interest" placeholder="Select your interest" />
+      <datalist id="interests">
+        <option *ngFor="let interest of careerOptions" [value]="interest"></option>
+      </datalist>
+      <div *ngIf="careerForm.get('interest')?.invalid && careerForm.get('interest')?.touched" class="error-message">
+        Career interest is required
+      </div>
+    </div>
+
+    <!-- Study Mode -->
+    <div class="form-group">
+      <label for="study_mode">Preferred Study Mode:</label>
+      <select id="study_mode" formControlName="study_mode">
+        <option value="Online Courses">Online Courses</option>
+        <option value="Self-study">Self-study</option>
+        <option value="Classroom">Classroom</option>
+      </select>
+    </div>
+
+    <!-- Skills Multi-select -->
+    <div class="form-group">
+      <label for="skills">Skills:</label>
+      <div class="skills-input-container">
+        <input 
+          id="skills" 
+          list="skill-list" 
+          formControlName="skills" 
+          [(ngModel)]="selectedSkill" 
+          placeholder="Choose skills for your selected interest" 
+        />
+        <button type="button" class="add-button" (click)="addSkill()" [disabled]="!selectedSkill">
+          Add
+        </button>
+      </div>
+      <datalist id="skill-list">
+        <option *ngFor="let skill of skillOptions" [value]="skill"></option>
+      </datalist>
+    </div>
+
+    <!-- Selected Skills Display -->
+    <div *ngIf="selectedSkills.length > 0" class="selected-skills">
+      <h3>Selected Skills:</h3>
+      <div class="skill-tags">
+        <div *ngFor="let skill of selectedSkills" class="skill-tag">
+          {{ skill }} 
+          <button type="button" class="remove-button" (click)="removeSkill(skill)">×</button>
         </div>
       </div>
-  
-      <!-- Academic Performance -->
-      <label for="marks">Average Academic Percentage:</label>
-      <input id="marks" formControlName="marks" type="number" min="0" max="100" required />
-  
-      <!-- Skill Levels -->
-      <label>Rate Your Skills (1-5):</label>
-      <div *ngFor="let skill of skillOptions">
-        <label>{{ skill }}:</label>
-        <input type="number" formControlName="{{ skill }}" min="1" max="5" />
-      </div>
-  
-      <!-- Preferred Study Mode -->
-      <label for="studyMode">Preferred Study Mode:</label>
-      <select id="studyMode" formControlName="studyMode">
-        <option value="Online">Online</option>
-        <option value="Offline">Offline</option>
-        <option value="Hybrid">Hybrid</option>
-      </select>
-  
-      <!-- Submit Button -->
-      <button type="submit" [disabled]="careerForm.invalid">Generate Roadmap</button>
-    </form>
-  
-    <!-- Display Career Path (if available) -->
-    <div *ngIf="careerPath">
-      <h3>Your Suggested Career Path:</h3>
-      <p>{{ careerPath }}</p>
     </div>
+
+    <!-- Submit -->
+    <div class="form-actions">
+      <button 
+        type="submit" 
+        [disabled]="careerForm.invalid || selectedSkills.length === 0 || isLoading"
+        class="submit-button"
+      >
+        <span *ngIf="!isLoading">Predict Career Path</span>
+        <span *ngIf="isLoading">Processing...</span>
+      </button>
+    </div>
+  </form>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error-alert">
+    {{ errorMessage }}
   </div>
-  
+
+  <!-- Result -->
+  <div *ngIf="careerPath" class="result">
+    <h3>Your Suggested Career Path:</h3>
+    <p class="career-recommendation">{{ careerPath }}</p>
+  </div>
+</div>
