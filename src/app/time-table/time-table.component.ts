@@ -70,7 +70,7 @@ export class TimeTableComponent {
 timeTable:[];
   submit() {
     this.loading = true;
-    this.http.post('http://localhost:3000/generate_timetable', (this.timetableForm.value))
+    this.http.post('http://localhost:4000/generate_timetable', (this.timetableForm.value))
       .subscribe(response => {
         this.result = response;
         
