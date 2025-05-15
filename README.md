@@ -1,27 +1,91 @@
-# App
+# 🎓 EduNavigator – Your Smart College Companion
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+EduNavigator is a full-stack college community platform built using the **MEAN stack (MongoDB, Express.js, Angular, Node.js)**. It’s designed to simplify and enhance the student experience by bringing everything — academics, community, and admin — under one roof.
 
-## Development server
+Whether you're a student searching for resources, a teacher managing coursework, or an admin handling operations, EduNavigator makes the journey smooth, intuitive, and impactful.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 🎯 For Students
+- 📚 **Personalized Course & Skill Recommendations**  
+  Get AI-driven suggestions based on your interests, performance, and goals.
 
-## Build
+- 💬 **Community Forums & Private Messaging**  
+  Discuss doubts, share insights, or connect with seniors and peers privately.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- 📝 **Access Study Materials & Submit Assignments**  
+  Download shared resources or submit your assignments directly through the portal.
 
-## Running unit tests
+- 📅 **Event & News Updates**  
+  Stay updated with all college events and announcements.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 👨‍🏫 For Faculty
+- 🧾 **Manage Assignments & Study Material**  
+  Upload notes, post assignments, and communicate with students.
 
-## Running end-to-end tests
+- 📊 **Attendance Tracking**  
+  Easily mark and review attendance. Students and parents get notified if it's too low.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 🏛️ For Admin
+- 🏦 **Fee Management Module**  
+  Track and manage academic fees, installment options, and reminders.
 
-## Further help
+- 📋 **Student Admission & Record Keeping**  
+  Store and retrieve all student data efficiently.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- 🧑‍🎓 **Alumni Access**  
+  View placement details and alumni information.
+
+- 👁️ **Guest Access**  
+  Visitors can explore general college details in a read-only view.
+
+---
+
+## 💡 Why EduNavigator?
+
+✅ Brings students, faculty, and management on one platform  
+✅ AI-powered recommendations to support smart academic decisions  
+✅ Fully responsive and user-friendly interface  
+✅ Modular design for easy scalability and maintenance  
+✅ Built using industry-standard technologies (MEAN stack)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Angular, HTML, CSS  
+- **Backend**: Node.js, Express.js  
+- **Database**: MongoDB  
+- **AI Integration**: Custom recommendation logic (expandable with ML models)
+
+---
+
+## 📂 Project Structure
+
+/client → Angular frontend
+/server → Node.js + Express backend
+/models → MongoDB Schemas
+/routes → API endpoints
+/utils → AI logic and utilities
+
+
+---
+## 🚀 Getting Started with Frontend (Angular)
+
+EduNavigator's backend APIs are already hosted, so you only need to run the frontend locally.
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/HARDIKMAKKAR/EduNavigator
+cd app
+
+### 2.Install Dependencies
+npm install
+
+### 3.Run
+ng serve
+
+
