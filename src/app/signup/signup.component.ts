@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AuthService } from '../services/authService';
 import { SignupsService } from '../shared/signups.service';
+import { Router } from '@angular/router';
 
 interface signUpResponse {
   idToken : string , 
@@ -19,7 +20,8 @@ export class SignupComponent {
 
   constructor(private http : HttpClient,
     private auth : AuthService,
-    private service : SignupsService
+    private service : SignupsService,
+    private router:Router
   ){}
   name : string = '';
   username : string = '';
@@ -60,7 +62,13 @@ export class SignupComponent {
     }
 
     this.service.signUp(this.name , this.username , this.email , this.phone , this.password , this.role).subscribe(res=>{
-      console.log(res);
+      if (res.success) {
+          alert(res.message || 'Signup successful!');
+          this.router.navigate(['/home']);  // Adjust the route if needed
+        } else {
+          alert(res.message || 'Signup failed. Please try again.');
+        }
+      
     })
   }
 }

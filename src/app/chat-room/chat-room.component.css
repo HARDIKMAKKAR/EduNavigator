@@ -125,6 +125,18 @@ body {
   color: #2f3542;
 }
 
+.message.self-message {
+  align-self: flex-end;        /* Align message to the right */
+  background-color: #ffa502;   /* Bright orange for sender */
+  color: white;                /* Optional: text color for contrast */
+  border-radius: 8px 8px 0 8px; /* Optional: bubble styling */
+  max-width: 75%;
+  padding: 10px;
+  text-align: left;            /* Keep text left-aligned inside bubble */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
 .message.system-message {
   font-style: italic;
   color: #888;
@@ -137,7 +149,9 @@ body {
   background: #fffae5;
   color: #333;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px 8px 0 8px;
   border-left: 5px solid #3498db;
+  max-width: 75%;
   transition: background-color 0.3s ease;
 }
 

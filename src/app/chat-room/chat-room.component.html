@@ -13,7 +13,7 @@
 
   <main class="chat-main">
     <div class="chat-messages" #chatMessages>
-      <div *ngFor="let message of messages" class="message" [ngClass]="{'system-message': message.user === 'System', 'user-message': message.user !== 'System'}">
+      <div *ngFor="let message of messages" class="message" [ngClass]="{'system-message': message.user === 'System', 'self-message': message.user === username, 'user-message': message.user !== 'System'  && message.user !== username}">
         <strong>{{ message.user }}:</strong> {{ message.text }}
       </div>
     </div>

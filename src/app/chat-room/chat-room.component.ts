@@ -29,15 +29,16 @@ export class ChatRoomComponent implements OnInit,AfterViewChecked  {
   room: string = 'main';
   loading: boolean = true;
   users: string[] = [];  // New
+  subscription:any
 
   constructor(private auth: AuthService, private route: Router , private service : LoginSService) {}
 
  async ngOnInit() {
-    const subscription = this.auth.isLoggedIn$.subscribe(async (isLoggedIn) => {
+    this.subscription = this.auth.isLoggedIn$.subscribe(async (isLoggedIn) => {
       if (!isLoggedIn) {
         alert('Please sign in to access the chat room');
         this.route.navigate(['/home']);
-        subscription.unsubscribe();
+        this.subscription.unsubscribe();
         return;
       }
 
@@ -45,7 +46,7 @@ export class ChatRoomComponent implements OnInit,AfterViewChecked  {
       if (!token) {
         alert('Token not found. Please sign in again.');
         this.route.navigate(['/home']);
-        subscription.unsubscribe();
+        this.subscription.unsubscribe();
         return;
       }
 
@@ -55,12 +56,13 @@ export class ChatRoomComponent implements OnInit,AfterViewChecked  {
           this.username = res.data.username || 'Anonymous';
           this.initSocket();
           this.loading = false;
+          console.log(this.username);
         },
         error: (err) => {
           console.error('Token decode failed', err);
           alert('Session expired. Please sign in again.');
           this.route.navigate(['/home']);
-          subscription.unsubscribe();
+          this.subscription.unsubscribe();
         }
       });
     });
